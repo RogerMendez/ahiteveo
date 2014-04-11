@@ -1,0 +1,11 @@
+Created proyect AHITEVEO
+Steps
+
+#create manually  database in postgres
+ahiteveo_db
+
+#install components
+easy_install south
+
+#synchronize database
+python manage.py syncdb
