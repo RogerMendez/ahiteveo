@@ -13,8 +13,14 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Dashboard</a></li>
                 <li><a href="#">Settings</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Help</a></li>
+                <li>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'users.views.loguet_out' %}">Cerrar Sesion</a>
+                    {% else %}
+                        <a href="{% url 'users.views.loguet_in' %}">Iniciar Sesion</a>
+                    {% endif %}
+                </li>
+                <li><a href="{% url 'users.views.new_user' %}">Registrate</a></li>
             </ul>
             <form class="navbar-form navbar-right">
                 <input type="text" class="form-control" placeholder="Search...">

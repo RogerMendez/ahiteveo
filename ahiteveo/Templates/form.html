@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+	<div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading text-center">
+            <div class="pull-left"> <a class="glyphicon glyphicon-circle-arrow-left" href="{% block atras %}/{% endblock %}"></a></div>
+            <b>{% block formtitle %}
+            	Titulo Formulario
+            {% endblock formtitle %}</b></div>
+        <div class="panel-body">
+            <h2>
+            	{% block formtitle2 %}
+            	Form
+				{% endblock formtitle2 %}
+            </h2>
+            <form method="post" action="" class="form-horizontal" role="form">{% csrf_token %}
+            	{% block form %}
+            		{% for field in formulario %}
+	            		<div class="form-group">
+	            			{{ field.errors }}
+	                        {{ field.label_tag }}
+	                        <div class="col-sm-9">
+	                        	{{ field }}
+                                {% if field.help_text %}
+                                    <p class="fg-color-green">
+                                        <i class="icon-warning"></i> {{ field.help_text }}
+                                    </p>
+                                {% endif %}
+	                        </div>
+	            		</div>
+	            	{% endfor %}
+            	{% endblock form %}    
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">{% block submit %}Enviar{% endblock submit %}</button>
+                    </div>
+                </div>
+            </form>
+            <script>
+            	$('label').addClass('col-sm-3 control-label');
+                $('input').addClass('form-control')
+            </script>
+        </div>
+    </div>
+{% endblock cuerpo %}
