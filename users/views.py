@@ -36,7 +36,7 @@ def code_activation_create():
     return code
 
 def home(request):
-    return render_to_response('base.html', context_instance=RequestContext(request))
+    return render_to_response('main.html', context_instance=RequestContext(request))
 
 def loguet_in(request):
     if not request.user.is_anonymous():
