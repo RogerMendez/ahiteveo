@@ -20,7 +20,7 @@
 
 <body cz-shortcut-listen="true">
 <!-- Librería jQuery requerida por los plugins de JavaScript -->
-<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{{ STATIC_URL }}js/jquery.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-md-2">
@@ -46,19 +46,14 @@
 
             </div>
             <div class="btn-group pull-right">
-                <button class="btn btn-success">
-                    {% if user.is_authenticated %}
-                        <a href="{% url 'users.views.loguet_out' %}" style="text-decoration: none;color: mintcream">Cerrar
-                            Sesion</a>
-                    {% else %}
-                        <a href="{% url 'users.views.loguet_in' %}" style="text-decoration: none;color: mintcream">Iniciar
-                            Sesion</a>
-                    {% endif %}
-                </button>
-                <button class="btn btn-success">
-                    <a href="{% url 'users.views.new_user' %}"
-                       style="text-decoration: none;color: mintcream">Registrate</a>
-                </button>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'users.views.loguet_out' %}" class="btn btn-warning">Cerrar
+                        Sesion</a>
+                {% else %}
+                    <a href="{% url 'users.views.loguet_in' %}" class="btn btn-success">Iniciar
+                        Sesion</a>
+                {% endif %}
+                <a href="{% url 'users.views.new_user' %}" class="btn btn-success">Registrate</a>
             </div>
 
         </div>
