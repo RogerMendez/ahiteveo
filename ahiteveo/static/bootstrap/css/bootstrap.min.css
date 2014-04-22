@@ -726,7 +726,8 @@ pre code {
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
-    padding-right: 15px
+    padding-right: 15px;
+    background: none;
 }
 
 @media (min-width: 768px) {
@@ -751,19 +752,24 @@ pre code {
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
-    padding-right: 15px
+    padding-right: 15px;
+    background:  #afab0e;
+    width: 85.2%;
 }
 
 .row {
     margin-left: -15px;
-    margin-right: -15px
+    margin-right: 35px;
+    background: none;
+    margin: 0 auto;
+
 }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
     position: relative;
     min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
@@ -1144,7 +1150,7 @@ pre code {
     }
 
     .col-sm-offset-9 {
-        margin-left: 75%
+        margin-left: 69%
     }
 
     .col-sm-offset-8 {
@@ -2104,7 +2110,8 @@ textarea.input-lg, select[multiple].input-lg {
 .form-horizontal .control-label, .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 7px
+    padding: 6px 10px 6px 10px;
+    width: 21%;
 }
 
 .form-horizontal .radio, .form-horizontal .checkbox {
@@ -2136,13 +2143,14 @@ textarea.input-lg, select[multiple].input-lg {
     margin-bottom: 0;
     font-weight: 400;
     text-align: center;
-    vertical-align: middle;
+    vertical-align: center;
     cursor: pointer;
     background-image: none;
     border: 1px solid transparent;
     white-space: nowrap;
     padding: 6px 12px;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: bold;
     line-height: 1.42857143;
     border-radius: 4px;
     -webkit-user-select: none;
@@ -2158,14 +2166,15 @@ textarea.input-lg, select[multiple].input-lg {
 }
 
 .btn:hover, .btn:focus {
-    color: #333;
+    color: black;
+    font-weight: bold;
     text-decoration: none
 }
 
 .btn:active, .btn.active {
     outline: 0;
     background-image: none;
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0, 0, .125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
 }
 
@@ -2366,7 +2375,8 @@ textarea.input-lg, select[multiple].input-lg {
     padding: 10px 16px;
     font-size: 18px;
     line-height: 1.33;
-    border-radius: 6px
+    border-radius: 6px;
+    width: 15%;
 }
 
 .btn-sm, .btn-group-sm > .btn {
@@ -3402,6 +3412,7 @@ input[type=submit].btn-block, input[type=reset].btn-block, input[type=button].bt
 .btn-group > .btn, .btn-group-vertical > .btn {
     position: relative;
     float: left
+
 }
 
 .btn-group > .btn:hover, .btn-group-vertical > .btn:hover, .btn-group > .btn:focus, .btn-group-vertical > .btn:focus, .btn-group > .btn:active, .btn-group-vertical > .btn:active, .btn-group > .btn.active, .btn-group-vertical > .btn.active {
@@ -3502,7 +3513,7 @@ input[type=submit].btn-block, input[type=reset].btn-block, input[type=button].bt
 }
 
 .btn-group-vertical > .btn, .btn-group-vertical > .btn-group, .btn-group-vertical > .btn-group > .btn {
-    display: block;
+    display:block;
     float: none;
     width: 100%;
     max-width: 100%
@@ -3711,18 +3722,19 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 .nav {
     margin-bottom: 0;
     padding-left: 0;
-    list-style: none
+    list-style: none:
 }
 
 .nav > li {
-    position: relative;
-    display: block
+    font-size: 12px;
+    position:relative;
+    display: inline-block;
 }
 
 .nav > li > a {
     position: relative;
     display: block;
-    padding: 10px 15px
+    padding: 10px 10px
 }
 
 .nav > li > a:hover, .nav > li > a:focus {
@@ -4267,8 +4279,10 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 }
 
 .navbar-default {
-    background-color: #f8f8f8;
-    border-color: #e7e7e7
+    background-color: black;
+    border-color:white;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .navbar-default .navbar-brand {
@@ -4717,7 +4731,7 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
     padding: 30px;
     margin-bottom: 30px;
     color: inherit;
-    background-color: #eee
+    background-color: none;
 }
 
 .jumbotron h1, .jumbotron .h1 {
@@ -5324,7 +5338,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 
 .panel-default {
-    border-color: #ddd
+    border-color: #357ebd
 }
 
 .panel-default > .panel-heading {
@@ -6063,11 +6077,11 @@ button.close {
 
 .clearfix:before, .clearfix:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
     content: " ";
-    display: table
+    display: table;
 }
 
 .clearfix:after, .container:after, .container-fluid:after, .row:after, .form-horizontal .form-group:after, .btn-toolbar:after, .btn-group-vertical > .btn-group:after, .nav:after, .navbar:after, .navbar-header:after, .navbar-collapse:after, .pager:after, .panel-body:after, .modal-footer:after {
-    clear: both
+    clear: both;
 }
 
 .center-block {
@@ -6077,6 +6091,7 @@ button.close {
 }
 
 .pull-right {
+    margin-top: -140px;
     float: right !important
 }
 

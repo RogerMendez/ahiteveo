@@ -9,6 +9,7 @@
     <!-- CSS de Bootstrap -->
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-theme.css" rel="stylesheet" media="screen">
+    <link href="{{ STATIC_URL }}bootstrap/css/styles.css" rel="stylesheet" media="screen">
     <link href="{{ STATIC_URL }}bootstrap/fonts/glyphicons-halflings-regular.svg" rel="stylesheet" media="screen">
 
     <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
@@ -23,19 +24,19 @@
 <script src="{{ STATIC_URL }}js/jquery.js"></script>
 <div class="container">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
             <img data-src="holder.js/140x140" class="img-rounded" alt="120x120" src="./static/images/logo.png"
-                 style="width: 120px; height: 120px; margin-top: 20px">
+                 style="width: 150px; height: 130px; margin: 20px">
         </div>
-        <div class="col-md-10" style="margin-top: 10px;margin-bottom: 5px">
-            <ol>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">QUIENES SOMOS</a></li>
-                <li><a href="#">NUESTROS SERVICIOS</a></li>
-                <li><a href="#">CONDICIONES DE USO</a></li>
-                <li><a href="#">PUBLICDAD</a></li>
+        <div class="col-md-9 nav" style="margin-top: 125px;margin-bottom: -5px">
+            <ol class ="nav olli">
+                <li class="enlaces  bg-primary"><a href="#" class="btn active">INICIO</a></li>
+                <li class="enlaces bg-primary"><a href="#" class="btn">QUIENES SOMOS</a></li>
+                <li class="enlaces bg-primary"><a href="#" class="btn">NUESTROS SERVICIOS</a></li>
+                <li class="enlaces bg-primary"><a href="#" class="btn ">CONDICIONES DE USO</a></li>
+                <li class="enlaces bg-primary"><a href="#" class="btn ">PUBLICDAD</a></li>
             </ol>
-            <div class="btn-group">
+            <!--div class="btn-group">
                 <button type="button" class="btn btn-default">1</button>
                 <button type="button" class="btn btn-default">2</button>
                 <button type="button" class="btn btn-default">MENU DE NAVEGACION</button>
@@ -44,31 +45,31 @@
                 <button type="button" class="btn btn-default">.</button>
                 <button type="button" class="btn btn-default">.</button>
 
-            </div>
+            </div-->
             <div class="btn-group pull-right">
                 {% if user.is_authenticated %}
                     <a href="{% url 'users.views.loguet_out' %}" class="btn btn-warning">Cerrar
                         Sesion</a>
                 {% else %}
-                    <a href="{% url 'users.views.loguet_in' %}" class="btn btn-success">Iniciar
+                    <a href="{% url 'users.views.loguet_in' %}" class="btn btn-styles">Iniciar
                         Sesion</a>
                 {% endif %}
-                <a href="{% url 'users.views.new_user' %}" class="btn btn-success">Registrate</a>
+                <a href="{% url 'users.views.new_user' %}" class="btn bg-primary">Registrate</a>
             </div>
 
         </div>
     </div>
 </div>
 
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
+<nav class=" navbar navbar-default" role="navigation">
+    <div class="container buscador">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group">
                     <label>BUSCAR </label>
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
-                <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                <button type="submit" class="btn btn-default"><i class=" glyphicon glyphicon-search"></i></button>
             </form>
         </div>
     </div>
@@ -77,62 +78,72 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <img class="img-rounded" alt="120x120" src="./static/images/publicidad2.jpg"
-             style="width: 99%; height: 320px;">
+        <img class="img-rounded imagen" alt="120x120" src="./static/images/publicidad2.jpg"
+             style="width: 99%; height: 420px;">
     </div>
 </div>
 
-<div class="container">
+<div class="container descripcion">
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
                     <h2>Acerca de AhiTeVeo</h2>
 
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+                    <p class="parrafo">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
                         mauris
                         condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
                         mollis
-                        euismod. Donec sed odio dui. </p>
+                        euismod. Donec sed odio dui.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam asperiores aspernatur consequuntur
+                        dolor ducimus eos, ipsum libero maiores natus neque nobis numquam quaerat quia, quibusdam repellat
+                        repudiandae voluptatem, voluptates?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
+                        blanditiis culpa dicta eaque earum excepturi, inventore iure magnam minima natus necessitatibus, nisi officiis
+                        perferendis quam quas quod totam veritatis voluptates. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Cupiditate, ea laudantium maiores reiciendis repellendus rerum sed! Accusantium asperiores dicta eius, illum ipsa
+                        maxime molestiae natus necessitatibus possimus, quibusdam voluptate voluptatibus?Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Adipisci amet assumenda at commodi, consequuntur, dolore dolorem doloremque illo
+                        illum inventore maiores minima non quaerat ratione repellat, reprehenderit repudiandae sapiente vitae.</p>
                 </div>
             </div>
             <hr>
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row contactos">
+                <div class="col-md-1"></div>
+                <div class="col-md-5  borde-contac">
                     <h2>Contactos</h2>
 
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
-                            <label for="inputNombre3" class="col-sm-2 control-label">Nombre</label>
+                            <label for="inputNombre3" class="col-sm-3 control-label bg-primary">Nombre</label>
 
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <input type="text" class="form-control" id="inputNombre3" placeholder="Nombre">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputCorreo3" class="col-sm-2 control-label">Correo</label>
+                            <label for="inputCorreo3" class="col-sm-3 control-label bg-primary">Correo</label>
 
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <input type="email" class="form-control" id="inputCorreo3" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputDescrpcion3" class="col-sm-2 control-label">Descripcion</label>
+                            <label for="inputDescrpcion3" class="col-sm-3 control-label bg-primary">Descripcion</label>
 
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <textarea class="form-control" id="inputDescrpcion3"
                                           placeholder="Decripcion"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-offset-7 col-sm-3 pull-right">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            <div class="col-sm-offset-9 col-sm-3  pull-left">
+                                <button type="submit" class="btn btn-primary enviar">Enviar</button>
                             </div>
                         </div>
                     </form>
 
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5 borde-contac">
                     <h2>Redes Sociales</h2>
 
                     <p>
@@ -178,24 +189,34 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-1"></div>
     </div>
 
     <div class="row text-center">
-        <div class="col-md-4">
-            <p>DIRECCION </p>
+        <div class="col-md-4 columna">
+            <h5>DIRECCION </h5>
+            <p class="datos">Av. Cotoca Km 12 Santa Cruz</p>
+            <p class="datos">Av. Murillo Nro. 120 Potosi</p>
+            <p class="datos">Av. Linares Nro. 1040 piso 5 La Paz </p>
         </div>
-        <div class="col-md-4">
-            <p>TEL/CEL CONTACTO </p>
+        <div class="col-md-4 columna">
+            <h5>TEL/CEL CONTACTO </h5>
+            <p class="datos">Cel. 70705265</p>
+            <p class="datos">cel. 68524563</p>
+            <p class="datos">Fono. 33562154 </p>
         </div>
-        <div class="col-md-4">
-            <p>SERVICIOS</p>
+        <div class="col-md-4 columna">
+            <h5>SERVICIOS</h5>
+            <p class="datos">Desarrollo de Tecnologias en SW</p>
+            <p class="datos">Servicios de Consultoria</p>
+            <p class="datos">Y otros servicios a pedido jejeje </p>
         </div>
     </div>
 
     <hr>
 
     <footer>
-        <p>© Company 2014</p>
+        <p>©copyright Company 2014  All the rights reserved AhiTeVeo.com</p>
     </footer>
 </div>
 <!-- /container -->

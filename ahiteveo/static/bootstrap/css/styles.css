@@ -1,0 +1,108 @@
+.cuerpo{
+    background: #fffef0;
+    width: 98%;
+}
+.row{
+    background:none;
+    box-shadow: 0 10px 20px black, 0 0 100px rgba(47, 58, 255, 0.23) inset;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid #0471BA;
+}
+img{
+    box-shadow: 2px 4px 5px black;
+}
+.btn-styles{
+       background-color: #afab0e;
+    color:white;
+    font-size: 12px;
+}
+.buscador{
+    background: #afab0e;
+    box-shadow:0 0 10px white inset, 0 0 40px black inset,0 2px 2px 2px black;
+    border-radius:20px ;
+}
+.olli{
+    background:linear-gradient(#0250a0,#0057A4,#035EAE,#0471BA);
+    text-align: center;
+    margin: 0 5px;
+    width: 100%;
+}
+.enlaces{
+    width: 19.5%;
+    text-align:center;
+    padding: 2px;
+}
+.enlaces:hover{
+    background: white;
+}
+    .enlaces a{
+        color: white;
+        font-weight: bold;
+        width: 98%;
+        padding: 0 10px;
+    }
+.imagen{
+    border-radius: 10px;
+    margin-top: -30px;
+}
+.descripcion{
+    margin-top: -40px;
+}
+    h2{
+        border-bottom: 2px solid greenyellow;
+        color: #0471BA;
+        font-weight: bolder;
+    }
+    .parrafo{
+                column-rule: 2;
+        padding: 20px 30px;
+        text-align: justify;
+        font-family:'roman times new';
+        font-size: 16px;
+    }
+.borde-contac{
+    border-top: 6px double #0c64ba;
+}
+label{
+    border-radius:20px 2px 2px 0;
+}
+.enviar{
+    font-size: 14px;
+    padding: 4px 30px;
+}
+.columna{
+    border-top: 6px double #0c64ba;
+    border-left: 10px double white;
+    border-right: 10px double white;
+}
+    h5{
+        border-bottom: 7px double #afab0e;
+        color: #0471BA;
+        font-weight: bolder;
+        font-size: 15px;
+    }
+    .datos{
+        background: #0471BA;
+        padding: 7px 0px;
+        font-size: 14px;
+        color: black;
+        font-weight: bolder;
+        border-radius: 60px 0px 60px 0;
+    }
+    .datos:nth-child(3){
+        border-radius:0px 60px 0px 60px;
+        background: #afab0e;
+    }
+footer{
+    height: 80px;
+    text-align: center;
+    border-radius: 60px 60px 0 0;
+    border-top: 20px double #97930e;
+    margin-top:-20px;
+    box-shadow: 0 0 5px white inset, 0 0 250px #0471BA inset, 0 0 500px #0471BA inset, 0 0 50px #0471BA inset, 0 10px 50px black;
+}
+    footer p{
+        margin-top: 20px;
+        font-weight: bolder;
+        color: white;
+    }
