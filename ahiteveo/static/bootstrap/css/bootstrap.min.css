@@ -751,9 +751,9 @@ pre code {
 .container-fluid {
     margin-right: auto;
     margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    background:  #afab0e;
+    padding-left: 1px;
+    padding-right: 1px;
+    background:  #fffef0;
     width: 85.2%;
 }
 

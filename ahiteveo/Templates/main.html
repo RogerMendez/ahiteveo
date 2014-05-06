@@ -14,9 +14,9 @@
 
     <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <!--script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script-->
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--[endif]-->
 </head>
 
 <body cz-shortcut-listen="true">
@@ -25,16 +25,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <img data-src="holder.js/140x140" class="img-rounded" alt="120x120" src="./static/images/logo.png"
+            <img data-src="holder.js/140x140" class="img-rounded img-shadow" alt="120x120" src="./static/images/logo.png"
                  style="width: 150px; height: 130px; margin: 20px">
         </div>
         <div class="col-md-9 nav" style="margin-top: 125px;margin-bottom: -5px">
             <ol class ="nav olli">
-                <li class="enlaces  bg-primary"><a href="#" class="btn active">INICIO</a></li>
+                <li class="enlaces  bg-primary active" ><a href="#" class="btn active">INICIO</a></li>
                 <li class="enlaces bg-primary"><a href="#" class="btn">QUIENES SOMOS</a></li>
                 <li class="enlaces bg-primary"><a href="#" class="btn">NUESTROS SERVICIOS</a></li>
                 <li class="enlaces bg-primary"><a href="#" class="btn ">CONDICIONES DE USO</a></li>
-                <li class="enlaces bg-primary"><a href="#" class="btn ">PUBLICDAD</a></li>
+                <li class="enlaces bg-primary"><a href="#" class="btn ">PUBLICIDAD</a></li>
             </ol>
             <!--div class="btn-group">
                 <button type="button" class="btn btn-default">1</button>
@@ -88,7 +88,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Acerca de AhiTeVeo</h2>
+                    <h2>    Bienvenidos a Nuestra Pagina</h2>
 
                     <p class="parrafo">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
                         mauris
@@ -143,22 +143,21 @@
                     </form>
 
                 </div>
-                <div class="col-md-5 borde-contac">
+                <div class="col-md-5 borde-contac face">
                     <h2>Redes Sociales</h2>
 
                     <p>
 
-                    <div class="fb-like" data-href="http://www.ahiteveo.com/" data-send="true" data-width="450"
-                         data-show-faces="false" data-font="segoe ui"></div>
-                    <div id="fb-root"></div>
-                    <script>(function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (d.getElementById(id)) return;
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));</script>
+                    <div class="fb-like" data-href="http://www.ahiteveo.com/" data-send="true" data-width="400px"
+                         data-show-faces="false" data-font="segoe ui" font-size="20px" date-color="red"></div>
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = id;
+                          js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+                          fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
                     <br>
 
                     <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.ahiteveo.com/"
@@ -225,7 +224,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script-->
 <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
 
 

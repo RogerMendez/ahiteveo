@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block cuerpo %}
-	<div class="panel panel-default">
+	<div class="panel panel-default  ">
         <!-- Default panel contents -->
         <div class="panel-heading text-center">
-            <div class="pull-left"> <a class="glyphicon glyphicon-circle-arrow-left" href="{% block atras %}/{% endblock %}"></a></div>
+            <div class="pull-left "> <a class="glyphicon glyphicon-circle-arrow-left" href="{% block atras %}/{% endblock %}"></a></div>
             <b>{% block formtitle %}
-            	Titulo Formulario
+            	Inicio de Sesion
             {% endblock formtitle %}</b></div>
         <div class="panel-body">
             <h2>
             	{% block formtitle2 %}
-            	Form
+            	Introdusca sus datos
 				{% endblock formtitle2 %}
             </h2>
             <form method="post" action="" class="form-horizontal" role="form">{% csrf_token %}
@@ -30,9 +30,9 @@
 	            		</div>
 	            	{% endfor %}
             	{% endblock form %}    
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary">{% block submit %}Enviar{% endblock submit %}</button>
+                <div class="form-group enviar-right">
+                    <div class="col-sm-offset-2 col-sm-10 ">
+                        <button type="submit" class="btn btn-primary enviar margin-left">{% block submit %}Enviar{% endblock submit %}</button>
                     </div>
                 </div>
             </form>
