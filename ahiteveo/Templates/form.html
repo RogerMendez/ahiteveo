@@ -1,43 +1,46 @@
 {% extends 'base.html' %}
 {% block cuerpo %}
-	<div class="panel panel-default  ">
+    <div class="panel panel-default  ">
         <!-- Default panel contents -->
         <div class="panel-heading text-center">
-            <div class="pull-left "> <a class="glyphicon glyphicon-circle-arrow-left" href="{% block atras %}/{% endblock %}"></a></div>
+            <div class="pull-left "><a class="glyphicon glyphicon-circle-arrow-left"
+                                       href="{% block atras %}/{% endblock %}"></a></div>
             <b>{% block formtitle %}
-            	Inicio de Sesion
+                Inicio de Sesion
             {% endblock formtitle %}</b></div>
         <div class="panel-body">
             <h2>
-            	{% block formtitle2 %}
-            	Introdusca sus datos
-				{% endblock formtitle2 %}
+                {% block formtitle2 %}
+                    Introdusca sus datos
+                {% endblock formtitle2 %}
             </h2>
+
             <form method="post" action="" class="form-horizontal" role="form">{% csrf_token %}
-            	{% block form %}
-            		{% for field in formulario %}
-	            		<div class="form-group">
-	            			{{ field.errors }}
-	                        {{ field.label_tag }}
-	                        <div class="col-sm-9">
-	                        	{{ field }}
+                {% block form %}
+                    {% for field in formulario %}
+                        <div class="form-group">
+                            {{ field.errors }}
+                            {{ field.label_tag }}
+                            <div class="col-sm-9">
+                                {{ field }}
                                 {% if field.help_text %}
                                     <p class="fg-color-green">
                                         <i class="icon-warning"></i> {{ field.help_text }}
                                     </p>
                                 {% endif %}
-	                        </div>
-	            		</div>
-	            	{% endfor %}
-            	{% endblock form %}    
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endblock form %}
                 <div class="form-group enviar-right">
                     <div class="col-sm-offset-2 col-sm-10 ">
-                        <button type="submit" class="btn btn-primary enviar margin-left">{% block submit %}Enviar{% endblock submit %}</button>
+                        <button type="submit" class="btn btn-primary enviar margin-left">{% block submit %}
+                            Enviar{% endblock submit %}</button>
                     </div>
                 </div>
             </form>
             <script>
-            	$('label').addClass('col-sm-3 control-label');
+                $('label').addClass('col-sm-3 control-label');
                 $('input').addClass('form-control')
             </script>
         </div>

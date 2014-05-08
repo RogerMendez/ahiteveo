@@ -1,18 +1,19 @@
 {# encoding:utf-8 #}
 {% extends 'base.html' %}
-{% block title %}Usuario no Activo{% endblock%}
+{% block title %}Usuario no Activo{% endblock %}
 {% block cuerpo %}
-<section class="consulta">
-    <div class="row-fluid">
-        <div class="alert alert-block">
-            <button type="button" class="close" data-dismiss="alert"></button>
-            <div class="row">
-	            <h4 class="col-md-9  text-center text-warning msj-error">Usted No es Usuario del Sistema...</h4>
+    <section class="consulta">
+        <div class="row-fluid">
+            <div class="alert alert-block">
+                <button type="button" class="close" data-dismiss="alert"></button>
+                <div class="row">
+                    <h4 class="col-md-9  text-center text-warning msj-error">Usted No es Usuario del Sistema...</h4>
 
-	            <img class="col-md-3" style="width: 110px; height: 100px;  background: url(../static/images/error.png); background-size: 105% 90%; background-repeat: no-repeat;">
-        	</div>
+                    <img class="col-md-3"
+                         style="width: 110px; height: 100px;  background: url(../static/images/error.png); background-size: 105% 90%; background-repeat: no-repeat;">
+                </div>
+            </div>
         </div>
-    </div>
-    <p class="lead le">Contactese Con el Administrador del Sistema Para Soluciona su Problema</p>
-</section>
+        <p class="lead le">Contactese Con el Administrador del Sistema Para Soluciona su Problema</p>
+    </section>
 {% endblock %}

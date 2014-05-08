@@ -1,11 +1,13 @@
 {# encoding:utf-8 #}
 {% extends 'base.html' %}
-{% block title %}Usuario{% endblock%}
+{% block title %}Usuario{% endblock %}
 {% block cuerpo %}
-     <div class="row">
+    <div class="row">
         <div class="span12 col-md-12 text-center">
             <h2 class="lead "><strong>Bienvenido</strong></h2>
+
             <p>{{ usuario.username|upper }}</p>
+
             <p>{{ usuario.color }}</p>
         </div>
         <!--div class="row">
@@ -16,12 +18,13 @@
                 <a class="button" href="{% url 'users.views.loguet_out' %}">Cerrar Sesion </a>
             </div>
         </div-->
-   
+
         <div class="row">
             <div class="span12 col-md-12 text-center">
                 <h3 class="borde-contac color">Complete el Registro de su Kardex</h3>
                 <a href="" class=" btn btn-styles margin-top">Completar</a>
-                    <a class="btn bg-primary margin-top" href="{% url 'users.views.reset_pass' %}"><b class="icon-refresh"> </b>Cambiar Contraseña</a>
+                <a class="btn bg-primary margin-top" href="{% url 'users.views.reset_pass' %}"><b
+                        class="icon-refresh"> </b>Cambiar Contraseña</a>
             </div>
         </div>
     </div>

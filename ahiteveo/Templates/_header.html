@@ -13,9 +13,9 @@
             <ul class="nav  navbar-right">
                 <!--li><a href="#">Dashboard</a></li>
                 <li><a href="#">Settings</a></li-->
-                <li >
+                <li>
                     {% if user.is_authenticated %}
-                        <a  href="{% url 'users.views.loguet_out' %}" class="btn btn-styles">Cerrar Sesion</a>
+                        <a href="{% url 'users.views.loguet_out' %}" class="btn btn-styles">Cerrar Sesion</a>
                     {% else %}
                         <a href="{% url 'users.views.loguet_in' %}" class="btn btn-styles">Iniciar Sesion</a>
                     {% endif %}

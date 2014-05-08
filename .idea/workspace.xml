@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89fc9034-3256-4ca6-b0d4-cbea6e352785" name="Default" comment="" />
+    <list default="true" id="89fc9034-3256-4ca6-b0d4-cbea6e352785" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\proyectos\ahiteveo\.idea\workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ahiteveo/Templates/_header.html" afterPath="$PROJECT_DIR$/ahiteveo/Templates/_header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ahiteveo/Templates/base.html" afterPath="$PROJECT_DIR$/ahiteveo/Templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ahiteveo/Templates/form.html" afterPath="$PROJECT_DIR$/ahiteveo/Templates/form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ahiteveo/Templates/main.html" afterPath="$PROJECT_DIR$/ahiteveo/Templates/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ahiteveo/Templates/user/nousuario.html" afterPath="$PROJECT_DIR$/ahiteveo/Templates/user/nousuario.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ahiteveo/Templates/user/privado.html" afterPath="$PROJECT_DIR$/ahiteveo/Templates/user/privado.html" />
+    </list>
     <list id="93fc8bc8-dd40-41e6-b0c0-04c572db22a2" name="NO CHANGE" comment="" />
     <ignored path="ahiteveo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,91 +32,7 @@
     <favorites_list name="ahiteveo" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="19" selection-start="1344" selection-end="1344" vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="2040">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.min.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ahiteveo/static/bootstrap/css/bootstrap.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="433" column="20" selection-start="6988" selection-end="6988" vertical-scroll-proportion="0.7081081" vertical-offset="7099" max-vertical-offset="106522">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ahiteveo/static/bootstrap/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="1" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="2720">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nousuario.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/user/nousuario.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="21" selection-start="668" selection-end="668" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="391">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="privado.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/user/privado.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="25" selection-start="744" selection-end="744" vertical-scroll-proportion="-6.0" vertical-offset="167" max-vertical-offset="595">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_menu.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/_menu.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="5" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="391">
-              <folding>
-                <marker date="1399098058503" expanded="true" signature="4:610" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_header.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/_header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="75" selection-start="1065" selection-end="1079" vertical-scroll-proportion="-5.1538463" vertical-offset="189" max-vertical-offset="595">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="75" selection-start="1293" selection-end="1293" vertical-scroll-proportion="-5.8846154" vertical-offset="306" max-vertical-offset="4046">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="51" selection-start="1431" selection-end="1431" vertical-scroll-proportion="-6.8076925" vertical-offset="367" max-vertical-offset="850">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -134,22 +58,22 @@
         <option value="$PROJECT_DIR$/ahiteveo/settings.py" />
         <option value="$PROJECT_DIR$/users/views.py" />
         <option value="$PROJECT_DIR$/ahiteveo/static/bootstrap/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/ahiteveo/Templates/base.html" />
-        <option value="$PROJECT_DIR$/ahiteveo/Templates/_header.html" />
-        <option value="$PROJECT_DIR$/ahiteveo/Templates/form.html" />
-        <option value="$PROJECT_DIR$/ahiteveo/Templates/user/privado.html" />
         <option value="$PROJECT_DIR$/ahiteveo/static/bootstrap/css/styles.css" />
-        <option value="$PROJECT_DIR$/ahiteveo/Templates/main.html" />
-        <option value="$PROJECT_DIR$/ahiteveo/Templates/user/nousuario.html" />
         <option value="$PROJECT_DIR$/ahiteveo/static/bootstrap/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/ahiteveo/Templates/base.html" />
+        <option value="$PROJECT_DIR$/ahiteveo/Templates/user/nousuario.html" />
+        <option value="$PROJECT_DIR$/ahiteveo/Templates/user/privado.html" />
+        <option value="$PROJECT_DIR$/ahiteveo/Templates/_header.html" />
+        <option value="$PROJECT_DIR$/ahiteveo/Templates/main.html" />
+        <option value="$PROJECT_DIR$/ahiteveo/Templates/form.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1376" />
-    <option name="height" value="744" />
+    <option name="x" value="11" />
+    <option name="y" value="1" />
+    <option name="width" value="1345" />
+    <option name="height" value="727" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -177,6 +101,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -283,13 +208,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -387,27 +311,7 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ahiteveo" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -433,7 +337,27 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ahiteveo" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -569,15 +493,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="744" extended-state="0" />
-    <editor active="true" />
+    <frame x="11" y="1" width="1345" height="727" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19376026" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.60456944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25735295" sideWeight="0.6715928" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2618862" sideWeight="0.3954306" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -609,9 +533,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25409198" sideWeight="0.67017543" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -630,6 +554,27 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/_header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="75" selection-start="1065" selection-end="1079" vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="71" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="3791">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="40" selection-start="1402" selection-end="1402" vertical-scroll-proportion="0.0" vertical-offset="367" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ahiteveo/static/bootstrap/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3457" column="12" selection-start="66953" selection-end="66953" vertical-scroll-proportion="-56.467567" vertical-offset="79662" max-vertical-offset="98464" />
@@ -650,82 +595,65 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="370" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ahiteveo/static/images/img3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ahiteveo/static/images/img2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ahiteveo/static/images/img1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/_menu.html">
+    <entry file="file://$PROJECT_DIR$/ahiteveo/static/bootstrap/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="5" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="391">
-          <folding>
-            <marker date="1399098058503" expanded="true" signature="4:610" placeholder="..." />
-          </folding>
+        <state line="439" column="5" selection-start="7061" selection-end="7061" vertical-scroll-proportion="0.0" vertical-offset="7463" max-vertical-offset="106522">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="19" selection-start="1344" selection-end="1344" vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="2040">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="51" selection-start="1431" selection-end="1431" vertical-scroll-proportion="-6.8076925" vertical-offset="367" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/_header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="75" selection-start="1065" selection-end="1079" vertical-scroll-proportion="-5.1538463" vertical-offset="189" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/user/privado.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="25" selection-start="744" selection-end="744" vertical-scroll-proportion="-6.0" vertical-offset="167" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ahiteveo/static/bootstrap/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="1" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="2720">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="75" selection-start="1293" selection-end="1293" vertical-scroll-proportion="-5.8846154" vertical-offset="306" max-vertical-offset="4046">
+        <state line="46" column="0" selection-start="2172" selection-end="2172" vertical-scroll-proportion="-22.884615" vertical-offset="187" max-vertical-offset="2040">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/user/nousuario.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="21" selection-start="668" selection-end="668" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="391">
+        <state line="14" column="18" selection-start="706" selection-end="706" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="408">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ahiteveo/static/bootstrap/css/bootstrap.min.css">
+    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/user/privado.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="433" column="20" selection-start="6988" selection-end="6988" vertical-scroll-proportion="0.7081081" vertical-offset="7099" max-vertical-offset="106522">
+        <state line="15" column="18" selection-start="553" selection-end="553" vertical-scroll-proportion="-5.0" vertical-offset="125" max-vertical-offset="646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/_menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="5" selection-start="202" selection-end="202" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/_header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="45" selection-start="536" selection-end="536" vertical-scroll-proportion="-2.8846154" vertical-offset="78" max-vertical-offset="595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="17" selection-start="2057" selection-end="2057" vertical-scroll-proportion="-5.8846154" vertical-offset="493" max-vertical-offset="4403">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ahiteveo/Templates/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="32" selection-start="1469" selection-end="1469" vertical-scroll-proportion="1.0522244" vertical-offset="0" max-vertical-offset="901">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3757">
           <folding />
         </state>
       </provider>
