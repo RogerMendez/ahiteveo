@@ -1,7 +1,11 @@
 #################
 ## Eclipse
 #################
-
+*.pyc
+/.idea
+/obj
+*.pyproj
+*.pyproj.user
 *.pydevproject
 .project
 .metadata

@@ -15,6 +15,7 @@ from django.utils.encoding import force_unicode
 from django.contrib.admin.models import LogEntry, ADDITION
 from django.contrib.contenttypes.models import ContentType
 
+
 import random
 
 def admin_log_addnition(request, objecto, mensaje):
