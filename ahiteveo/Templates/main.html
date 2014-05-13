@@ -9,19 +9,18 @@
     <!-- CSS de Bootstrap -->
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-theme.css" rel="stylesheet" media="screen">
-    <link href="{{ STATIC_URL }}bootstrap/css/styles.css" rel="stylesheet" media="screen">
+    <link href="{{ STATIC_URL }}bootstrap/css/dashboard.css" rel="stylesheet" media="screen">
     <link href="{{ STATIC_URL }}bootstrap/fonts/glyphicons-halflings-regular.svg" rel="stylesheet" media="screen">
-
+    <link href="{{ STATIC_URL }}bootstrap/css/styles.css" rel="stylesheet" media="screen">
+    <script src="{{ STATIC_URL }}js/jquery.js"></script>
     <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
     <!--[if lt IE 9]>
       <!--script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script-->
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
     <!--[endif]-->
 </head>
 
-<body cz-shortcut-listen="true">
-<!-- Librería jQuery requerida por los plugins de JavaScript -->
-<script src="{{ STATIC_URL }}js/jquery.js"></script>
+<body>
 <div class="container">
     <div class="row">
         <div class="col-md-3">
@@ -57,188 +56,194 @@
                 {% endif %}
                 <a href="{% url 'users.views.new_user' %}" class="btn bg-primary">Registrate</a>
             </div>
-
         </div>
     </div>
-</div>
 
-<nav class=" navbar navbar-default" role="navigation">
-    <div class="container buscador">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form class="navbar-form navbar-right" role="search">
+    <div class="row paddingtop20">
+        <div class="col-md-12">
+            <form class="form-horizontal" role="form">
                 <div class="form-group">
-                    <label>BUSCAR </label>
-                    <input type="text" class="form-control" placeholder="Search">
+                    <label for="search" class="col-lg-2 control-label">Buscar</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" id="search" placeholder="Buscar">
+                    </div>
+                    <button type="submit" class="col-lg-1 text-danger"><i class="glyphicon glyphicon-search"></i></button>
                 </div>
-                <button type="submit" class="btn btn-default"><i class=" glyphicon glyphicon-search"></i></button>
+
+
             </form>
         </div>
     </div>
-</nav>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <img class="img-rounded imagen" alt="120x120" src="./static/images/publicidad2.jpg"
-             style="width: 99%; height: 420px;">
-    </div>
-</div>
-
-<div class="container descripcion">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2> Bienvenidos a Nuestra Pagina</h2>
-
-                    <p class="parrafo">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-                        commodo, tortor
-                        mauris
-                        condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
-                        mollis
-                        euismod. Donec sed odio dui.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam asperiores aspernatur
-                        consequuntur
-                        dolor ducimus eos, ipsum libero maiores natus neque nobis numquam quaerat quia, quibusdam
-                        repellat
-                        repudiandae voluptatem, voluptates?Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Beatae
-                        blanditiis culpa dicta eaque earum excepturi, inventore iure magnam minima natus necessitatibus,
-                        nisi officiis
-                        perferendis quam quas quod totam veritatis voluptates. Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit.
-                        Cupiditate, ea laudantium maiores reiciendis repellendus rerum sed! Accusantium asperiores dicta
-                        eius, illum ipsa
-                        maxime molestiae natus necessitatibus possimus, quibusdam voluptate voluptatibus?Lorem ipsum
-                        dolor sit amet,
-                        consectetur adipisicing elit. Adipisci amet assumenda at commodi, consequuntur, dolore dolorem
-                        doloremque illo
-                        illum inventore maiores minima non quaerat ratione repellat, reprehenderit repudiandae sapiente
-                        vitae.</p>
-                </div>
+    {% block cuerpo %}
+        <div class="jumbotron">
+            <div class="container">
+                <img class="img-rounded imagen" alt="120x120" src="./static/images/publicidad2.jpg"
+                     style="width: 99%; height: 420px;">
             </div>
-            <hr>
-            <div class="row contactos">
-                <div class="col-md-1"></div>
-                <div class="col-md-5  borde-contac">
-                    <h2>Contactos</h2>
+        </div>
 
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label for="inputNombre3" class="col-sm-3 control-label bg-primary">Nombre</label>
+    {% endblock %}
 
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputNombre3" placeholder="Nombre">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputCorreo3" class="col-sm-3 control-label bg-primary">Correo</label>
+    <div class="container descripcion">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2> Bienvenidos a Nuestra Pagina</h2>
 
-                            <div class="col-sm-9">
-                                <input type="email" class="form-control" id="inputCorreo3" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputDescrpcion3" class="col-sm-3 control-label bg-primary">Descripcion</label>
-
-                            <div class="col-sm-9">
-                                <textarea class="form-control" id="inputDescrpcion3"
-                                          placeholder="Decripcion"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-9 col-sm-3  pull-left">
-                                <button type="submit" class="btn btn-primary enviar">Enviar</button>
-                            </div>
-                        </div>
-                    </form>
-
+                        <p class="parrafo">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                            commodo, tortor
+                            mauris
+                            condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+                            mollis
+                            euismod. Donec sed odio dui.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam asperiores aspernatur
+                            consequuntur
+                            dolor ducimus eos, ipsum libero maiores natus neque nobis numquam quaerat quia, quibusdam
+                            repellat
+                            repudiandae voluptatem, voluptates?Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Beatae
+                            blanditiis culpa dicta eaque earum excepturi, inventore iure magnam minima natus necessitatibus,
+                            nisi officiis
+                            perferendis quam quas quod totam veritatis voluptates. Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit.
+                            Cupiditate, ea laudantium maiores reiciendis repellendus rerum sed! Accusantium asperiores dicta
+                            eius, illum ipsa
+                            maxime molestiae natus necessitatibus possimus, quibusdam voluptate voluptatibus?Lorem ipsum
+                            dolor sit amet,
+                            consectetur adipisicing elit. Adipisci amet assumenda at commodi, consequuntur, dolore dolorem
+                            doloremque illo
+                            illum inventore maiores minima non quaerat ratione repellat, reprehenderit repudiandae sapiente
+                            vitae.</p>
+                    </div>
                 </div>
-                <div class="col-md-5 borde-contac face">
-                    <h2>Redes Sociales</h2>
+                <hr>
+                <div class="row contactos">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5  borde-contac">
+                        <h2>Contactos</h2>
 
-                    <p>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputNombre3" class="col-sm-3 control-label bg-primary">Nombre</label>
 
-                    <div class="fb-like" data-href="http://www.ahiteveo.com/" data-send="true" data-width="400px"
-                         data-show-faces="false" data-font="segoe ui" font-size="20px" date-color="red"></div>
-                    <div id="fb-root"></div>
-                    <script>(function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (d.getElementById(id)) return;
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));</script>
-                    <br>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputNombre3" placeholder="Nombre">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputCorreo3" class="col-sm-3 control-label bg-primary">Correo</label>
 
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.ahiteveo.com/"
-                       data-text="las mejores promociones,cupones,descuentos de Restaurantes, Cafeterías, Viajes, mucho mas..."
-                       data-via="sielabs" data-lang="es" data-hashtags="sielabs">Twittear</a>
-                    <script>!function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                        if (!d.getElementById(id)) {
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="inputCorreo3" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescrpcion3" class="col-sm-3 control-label bg-primary">Descripcion</label>
+
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" id="inputDescrpcion3"
+                                              placeholder="Decripcion"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-9 col-sm-3  pull-left">
+                                    <button type="submit" class="btn btn-primary enviar">Enviar</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-md-5 borde-contac face">
+                        <h2>Redes Sociales</h2>
+
+                        <p>
+
+                        <div class="fb-like" data-href="http://www.ahiteveo.com/" data-send="true" data-width="400px"
+                             data-show-faces="false" data-font="segoe ui" font-size="20px" date-color="red"></div>
+                        <div id="fb-root"></div>
+                        <script>(function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
                             js = d.createElement(s);
                             js.id = id;
-                            js.src = p + '://platform.twitter.com/widgets.js';
+                            js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
                             fjs.parentNode.insertBefore(js, fjs);
-                        }
-                    }(document, 'script', 'twitter-wjs');</script>
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <br>
 
-                    <br><br>
-                    <!-- Place this tag in your head or just before your close body tag. -->
-                    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-                        {
-                            lang: 'es-419'
-                        }
-                    </script>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.ahiteveo.com/"
+                           data-text="las mejores promociones,cupones,descuentos de Restaurantes, Cafeterías, Viajes, mucho mas..."
+                           data-via="sielabs" data-lang="es" data-hashtags="sielabs">Twittear</a>
+                        <script>!function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = p + '://platform.twitter.com/widgets.js';
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, 'script', 'twitter-wjs');</script>
 
-                    <!-- Place this tag where you want the +1 button to render. -->
-                    <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300"
-                         data-href="http://www.ahiteveo.com/"></div>
-                    </p>
+                        <br><br>
+                        <!-- Place this tag in your head or just before your close body tag. -->
+                        <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+                            {
+                                lang: 'es-419'
+                            }
+                        </script>
+
+                        <!-- Place this tag where you want the +1 button to render. -->
+                        <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300"
+                             data-href="http://www.ahiteveo.com/"></div>
+                        </p>
+                    </div>
                 </div>
             </div>
+            <div class="col-md-1"></div>
         </div>
-        <div class="col-md-1"></div>
+
+        <div class="row text-center">
+            <div class="col-md-4 columna">
+                <h5>DIRECCION </h5>
+
+                <p class="datos">Av. Cotoca Km 12 Santa Cruz</p>
+
+                <p class="datos">Av. Murillo Nro. 120 Potosi</p>
+
+                <p class="datos">Av. Linares Nro. 1040 piso 5 La Paz </p>
+            </div>
+            <div class="col-md-4 columna">
+                <h5>TEL/CEL CONTACTO </h5>
+
+                <p class="datos">Cel. 70705265</p>
+
+                <p class="datos">cel. 68524563</p>
+
+                <p class="datos">Fono. 33562154 </p>
+            </div>
+            <div class="col-md-4 columna">
+                <h5>SERVICIOS</h5>
+
+                <p class="datos">Desarrollo de Tecnologias en SW</p>
+
+                <p class="datos">Servicios de Consultoria</p>
+
+                <p class="datos">Y otros servicios a pedido jejeje </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>©copyright Company 2014 All the rights reserved AhiTeVeo.com</p>
+        </footer>
     </div>
 
-    <div class="row text-center">
-        <div class="col-md-4 columna">
-            <h5>DIRECCION </h5>
-
-            <p class="datos">Av. Cotoca Km 12 Santa Cruz</p>
-
-            <p class="datos">Av. Murillo Nro. 120 Potosi</p>
-
-            <p class="datos">Av. Linares Nro. 1040 piso 5 La Paz </p>
-        </div>
-        <div class="col-md-4 columna">
-            <h5>TEL/CEL CONTACTO </h5>
-
-            <p class="datos">Cel. 70705265</p>
-
-            <p class="datos">cel. 68524563</p>
-
-            <p class="datos">Fono. 33562154 </p>
-        </div>
-        <div class="col-md-4 columna">
-            <h5>SERVICIOS</h5>
-
-            <p class="datos">Desarrollo de Tecnologias en SW</p>
-
-            <p class="datos">Servicios de Consultoria</p>
-
-            <p class="datos">Y otros servicios a pedido jejeje </p>
-        </div>
-    </div>
-
-    <hr>
-
-    <footer>
-        <p>©copyright Company 2014 All the rights reserved AhiTeVeo.com</p>
-    </footer>
 </div>
+<!-- Librería jQuery requerida por los plugins de JavaScript -->
+
 <!-- /container -->
 
 

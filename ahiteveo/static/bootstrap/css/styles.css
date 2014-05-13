@@ -148,7 +148,23 @@ footer{
     background: greenyellow;
 }
 .msj-error{
-    color:blue;
+    color: #ff192e;
     padding: 30px;
     font-size: 30px;
+}
+.imagen_error{
+    width: 110px;
+    height: 100px;
+    background: url("../../images/error.png");
+    background-size: 105% 90%;
+    background-repeat: no-repeat;
+}
+.padding10{
+    padding: 10px;
+}
+.padding30{
+    padding: 30px;
+}
+.paddingtop20{
+    padding-top: 20px;
 }

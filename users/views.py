@@ -9,7 +9,7 @@ from django.contrib.auth.forms import AdminPasswordChangeForm, AuthenticationFor
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required, permission_required
 from models import Perfiles
-from users.form import EmailForm
+from users.form import EmailForm, PerfilForm
 from django.core.mail import EmailMultiAlternatives
 from django.utils.encoding import force_unicode
 from django.contrib.admin.models import LogEntry, ADDITION
@@ -134,3 +134,18 @@ def confirmation_user(request):
         return HttpResponseRedirect('/')
     else:
         return HttpResponseRedirect(reverse(new_user))
+
+
+@login_required(login_url='/login')
+def complete_profile(request):
+    #perfil = Perfiles.objects.get(usuario = request.user)
+    if request.method == 'POST':
+        formulario = PerfilForm(request.POST, request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            return HttpResponseRedirect(reverse(private, ))
+    else:
+        formulario = PerfilForm()
+    return render_to_response('profiles/complete_profile.html', {
+        'formulario':formulario,
+        }, context_instance = RequestContext(request))
