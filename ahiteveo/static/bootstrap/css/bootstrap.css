@@ -3454,8 +3454,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav > li {
   position: relative;
-  display:inline-block;
-  width: 15%;
+  display: block;
 }
 .nav > li > a {
   position: relative;
@@ -4692,7 +4691,7 @@ a.list-group-item-info .list-group-item-heading {
 }
 a.list-group-item-info:hover,
 a.list-group-item-info:focus {
-  color: #ca443e;
+  color: #31708f;
   background-color: #c4e3f3;
 }
 a.list-group-item-info.active,
