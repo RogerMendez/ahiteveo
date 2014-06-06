@@ -7,11 +7,12 @@
     <title>Plantilla básica de Bootstrap</title>
 
     <!-- CSS de Bootstrap -->
-    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-theme.css" rel="stylesheet" media="screen">
-    <link href="{{ STATIC_URL }}bootstrap/css/dashboard.css" rel="stylesheet" media="screen">
-    <link href="{{ STATIC_URL }}bootstrap/fonts/glyphicons-halflings-regular.svg" rel="stylesheet" media="screen">
-    <link href="{{ STATIC_URL }}bootstrap/css/styles.css" rel="stylesheet" media="screen">
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}bootstrap/css/dashboard.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}bootstrap/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+    <link href="{{ STATIC_URL }}bootstrap/css/styles.css" rel="stylesheet">
     <script src="{{ STATIC_URL }}js/jquery.js"></script>
     <script src="{{ STATIC_URL }}js/modernizr.custom.04022.js}"></script>
     <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
@@ -20,13 +21,13 @@
 
     <!--[endif]-->
 </head>
-<body class="body">
-<div class="container">
-    <div class="row base-contenedor " style="background: transparent url(../static/images/firma1609wc.png) no-repeat; background-size: 100% 100%;">
+<body class="body rgb-color-gray">
+<div class="container ">
+    <div class="row base-contenedor box-shadow-header" style="background: transparent url(../static/images/firma1609wc.png) no-repeat; background-size: 100% 100%;">
         <div class="col-md-4">
             <img data-src="holder.js/140x140" class="img-rounded " alt="120x160"
                  src="./static/images/logos.png"
-                 style="width: 250px; height: 140px; margin: 4px;">
+                 style="width: 250px;  margin: 4px;">
         </div>
 
             <div class="btn-group pull-right">
@@ -34,24 +35,44 @@
                     <a href="{% url 'users.views.loguet_out' %}" class="btn btn-warning">Cerrar
                         Sesion</a>
                 {% else %}
-                    <a href="{% url 'users.views.loguet_in' %}" class="btn btn-styles">Iniciar
+                    <a href="{% url 'users.views.loguet_in' %}" class="btn bg-color-orange fg-color-white ">Iniciar
                         Sesion</a>
                 {% endif %}
                 <a href="{% url 'users.views.new_user' %}" class="btn bg-primary">Registrate</a>
              </div>
 
-        <div class="col-md-8  margin-top-75 padding-menu ">
-            <ol class="nav navbar-nav  pull-right none-color-backgraund ">
+            <div class="navbar navbar-default col-md-8 line-altura margin-top-75 padding-menu none-color-backgraund border-color-none">
+                <div class="navbar-header none-color-backgraund">
+                    <a class="navbar-brand" href=""></a>
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                    </button>
+                </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse none-color-backgraund altura-menu margin-top-75" id="navbar-main">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="bg-primary active none-color-backgraund"><a href="#" class="btn font-size none-color-backgraund text-styles text-actived">INICIO</a></li>
+                    <li class="bg-primary none-color-backgraund"><a href="#" class="btn font-size none-color-backgraund text-styles">QUIENES SOMOS</a></li>
+                    <li class="bg-primary none-color-backgraund"><a href="#" class="btn font-size none-color-backgraund text-styles">NUESTROS SERVICIOS</a></li>
+                    <li class="bg-primary none-color-backgraund"><a href="#" class="btn font-size none-color-backgraund text-styles">CONDICIONES DE USO</a></li>
+                    <li class="bg-primary none-color-backgraund"><a href="#" class="btn font-size none-color-backgraund text-styles">PUBLICIDAD</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--div class="col-md-8  margin-top-75 padding-menu navbar navbar-default navba none-color-backgraund">
+            <ol class="nav navbar-nav  pull-right  ">
                 <li class="bg-primary active none-color-backgraund "><a href="#" class="btn font-size none-color-backgraund text-styles text-actived">INICIO</a></li>
                 <li class="bg-primary none-color-backgraund"><a href="#" class="btn font-size none-color-backgraund text-styles">QUIENES SOMOS</a></li>
                 <li class="bg-primary none-color-backgraund"><a href="#" class="btn font-size none-color-backgraund text-styles">NUESTROS SERVICIOS</a></li>
                 <li class="bg-primary none-color-backgraund"><a href="#" class="btn font-size none-color-backgraund text-styles">CONDICIONES DE USO</a></li>
                 <li class="bg-primary none-color-backgraund"><a href="#" class="btn font-size none-color-backgraund text-styles">PUBLICIDAD</a></li>
             </ol>
-        </div>
+        </div-->
     </div>
 
-    <div class="row margin-top-1 padding-sup-inf-2 "  style=" background: #fff6f9 url(../static/images/fond.jpg)repeat; background-size:100% 100%;">
+    <div class="row margin-top-1 padding-sup-inf-2 box-shadow-buscador-orange"  style=" background: #fff6f9 url(../static/images/fond.jpg)repeat; background-size:100% 100%;">
+
         <div class="col-md-6"></div>
         <div class="col-md-6">
             <form class="form-horizontal" role="form">
@@ -93,8 +114,8 @@
 
 
 
-                        <div class="sp-content" style="background: #579ca3 url(../static/images/grid.png) repeat scroll 0 0 !important;">
-                            <div class="sp-parallax-bg" style="background: url(../static/images/map.png) repeat-x scroll 0 0;"></div>
+                        <div class="sp-content">
+                            <div class="sp-parallax-bg"></div>
                             <ul class="sp-slider clearfix">
                                 <li><img src="./static/images/image1.png" alt="image01" /></li>
                                 <li><img src="./static/images/image2.png" alt="image02" /></li>
@@ -145,90 +166,59 @@
                             vitae.</p>
                     </div>
                 </div>
-                <hr>
-                <div class="row contactos" style=" background: #190f05 url(../static/images/fond.jpg)repeat; background-size:100% 100%;">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5  borde-contac">
-                        <h2>Contactos</h2>
+                    <div class="row  margin-button-25">
+                        <h2 class=" margin-left-15 margin-right-15">Siguenos en...</h2>
+                        <div class="row">
+                            <div class="col-md-6 "></div>
+                            <div class="col-md-2">
+                                <div class="fb-like" data-href="http://www.ahiteveo.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label for="inputNombre3" class="col-sm-3 control-label bg-primary">Nombre</label>
-
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputNombre3" placeholder="Nombre">
+                                <div id="fb-root"></div>
+                                <script>(function(d, s, id) {
+                                  var js, fjs = d.getElementsByTagName(s)[0];
+                                  if (d.getElementById(id)) return;
+                                  js = d.createElement(s); js.id = id;
+                                  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.0";
+                                  fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));</script>
+                            </div>
+                            <div class="col-md-2 ">
+                                <div class="row">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-9">
+                                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.ahiteveo.com/"
+                                           data-text="las mejores promociones,cupones,descuentos de Restaurantes, Cafeterías, Viajes, mucho mas..."
+                                           data-via="sielabs" data-lang="es" data-hashtags="sielabs">Twittear</a>
+                                        <script>!function (d, s, id) {
+                                            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                                            if (!d.getElementById(id)) {
+                                                js = d.createElement(s);
+                                                js.id = id;
+                                                js.src = p + '://platform.twitter.com/widgets.js';
+                                                fjs.parentNode.insertBefore(js, fjs);
+                                            }
+                                        }(document, 'script', 'twitter-wjs');</script>
+                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="inputCorreo3" class="col-sm-3 control-label bg-primary">Correo</label>
 
-                                <div class="col-sm-9">
-                                    <input type="email" class="form-control" id="inputCorreo3" placeholder="Email">
-                                </div>
+                            <div class="col-md-2">
+                            <!-- Place this tag in your head or just before your close body tag. -->
+                                <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+                                    {
+                                        lang: 'es-419'
+                                    }
+                                </script>
+
+                                <!-- Place this tag where you want the +1 button to render. -->
+                                <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300"
+                                     data-href="http://www.ahiteveo.com/"></div>
                             </div>
-                            <div class="form-group">
-                                <label for="inputDescrpcion3" class="col-sm-3 control-label bg-primary">Descripcion</label>
 
-                                <div class="col-sm-9">
-                                    <textarea class="form-control" id="inputDescrpcion3"
-                                              placeholder="Decripcion"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-9 col-sm-3  pull-left">
-                                    <button type="submit" class="btn btn-primary enviar">Enviar</button>
-                                </div>
-                            </div>
-                        </form>
-
-                    </div>
-                    <div class="col-md-5 borde-contac face">
-                        <h2>Redes Sociales</h2>
-
-                        <p>
-
-                        <div class="fb-like" data-href="http://www.ahiteveo.com/" data-send="true" data-width="400px"
-                             data-show-faces="false" data-font="segoe ui" font-size="20px" date-color="red"></div>
-                        <div id="fb-root"></div>
-                        <script>(function (d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0];
-                            if (d.getElementById(id)) return;
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'facebook-jssdk'));</script>
-                        <br>
-
-                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.ahiteveo.com/"
-                           data-text="las mejores promociones,cupones,descuentos de Restaurantes, Cafeterías, Viajes, mucho mas..."
-                           data-via="sielabs" data-lang="es" data-hashtags="sielabs">Twittear</a>
-                        <script>!function (d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                            if (!d.getElementById(id)) {
-                                js = d.createElement(s);
-                                js.id = id;
-                                js.src = p + '://platform.twitter.com/widgets.js';
-                                fjs.parentNode.insertBefore(js, fjs);
-                            }
-                        }(document, 'script', 'twitter-wjs');</script>
-
-                        <br><br>
-                        <!-- Place this tag in your head or just before your close body tag. -->
-                        <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-                            {
-                                lang: 'es-419'
-                            }
-                        </script>
-
-                        <!-- Place this tag where you want the +1 button to render. -->
-                        <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300"
-                             data-href="http://www.ahiteveo.com/"></div>
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-1"></div>
         </div>
 
         <div class="row text-center" style=" background: #190f05 url(../static/images/fond.jpg)repeat; background-size:100% 100%;">
@@ -261,11 +251,12 @@
             </div>
         </div>
 
-        <hr>
 
-        <footer style=" background: #190f05 url(../static/images/fond.jpg)repeat; background-size:100% 100%;">
-            <p>©copyright Company 2014 All the rights reserved AhiTeVeo.com</p>
-        </footer>
+        <div class="row margin-top-25">
+            <footer class="col-md-12" style=" background: #190f05 url(../static/images/fond.jpg)repeat; background-size:100% 100%;">
+                <p>©copyright Company 2014 All the rights reserved AhiTeVeo.com</p>
+            </footer>
+        </div>
     </div>
 
 </div>

@@ -11,10 +11,11 @@
 .active{
     background: #84bcff;
 }
-.btn-styles{
+.bg-color-orange{
        background-color: #ff9900;
-    color:white;
-    font-size: 12px;
+}
+.fg-color-white{
+    color: white;
 }
 .enlaces{
     width: 19.5%;
@@ -22,7 +23,7 @@
     padding: 2px;
 }
 .contactos{
-    background: red !important;
+    background: transparent !important;
     margin-top:0px !important;
     margin-bottom: 0px !important;
 }
@@ -43,13 +44,13 @@
     margin-top: -45px;
 }
     h2{
-        border-bottom: 3px solid #ff9900;
-        color: #0471BA;
-        font-weight: bolder;
+        border-bottom: 3px solid #ff9900 !important;
+        color: #0471BA !important;
+        font-weight: bolder !important;
     }
     .parrafo{
-                column-rule: 2;
-        padding: 20px 30px;
+        column-rule: 2 !important;
+        padding: 10px 3px;
         text-align: justify;
         font-family:'roman times new';
         font-size: 16px;
@@ -65,10 +66,11 @@ label{
     padding: 4px 20px;
 }
 .columna{
-    border-top: 6px double #0c64ba;
-    border-left: 10px double white;
-    border-right: 10px double white;
+    border-top: 1px double #0c64ba;
+    border-left: 1px double black;
+    border-right: 1px double black;
 }
+
     h5{
         border-bottom: 7px double #ff9900;
         color: #0471BA;
@@ -76,19 +78,17 @@ label{
         font-size: 15px;
     }
     .datos{
-        padding: 7px 0px;
-        font-size: 14px;
-        color: black;
+        padding: 2px 0px;
+        font-size: 12px;
+        color: white;
         font-weight: bolder;
-        border-radius: 60px 0px 60px 0;
-    }
-    .datos:nth-child(3){
-        border-radius:0px 60px 0px 60px;
     }
 .face{
     font-size: 20px;
 }
-
+.border-color-none{
+    border-color:transparent !important;
+}
 footer{
     height: 80px;
     text-align: center;
@@ -111,8 +111,9 @@ footer{
     margin-bottom: 10px;
     z-index: -1000;
 }
-.margin-left{
-    margin-left: -140px;
+
+.margin-top-25{
+    margin-top: 25px;
 }
 .enviar-left{
     margin-right: 200px;
@@ -162,6 +163,9 @@ footer{
 .margin-top-10{
     margin-top: 10px;
 }
+.margin-button-25{
+    margin-bottom: -25px;
+}
 .margin-center{
     margin: 2px 0px !important;
 }
@@ -169,16 +173,34 @@ footer{
     margin-top: 30px;
 }
 .margin-top-75{
-    margin-top: 75px;
+    margin-top: 40px;
 }
 .margin-left{
     margin-left: 10px;
+}
+.margin-right-15{
+    margin-right: 15px;
+}
+.margin-left-15{
+    margin-left: 15px;
+}
+.line-altura{
+    position: relative;
+    line-height:75px !important;
+    margin-bottom: 0px !important;
+    max-height: 30px !important;
+}
+.altura-menu{
+    height: 20px !important;
 }
 .padding-menu{
     padding: 0px 10px;
 }
 .padding-sup-inf-2{
     padding: 2px 0px;
+}
+.text-padding-lados{
+    padding: 0 20px;
 }
 .font-size{
     font-size:12px ;
@@ -199,15 +221,28 @@ footer{
 }
 .text-actived{
     color: #5680ff !important;
-    text-shadow: 0 0 6px white, 0 0 1px black !important;
+    text-shadow: 0 0 4px white, 0 0 1px black !important;
+}
+.activado:hover{
+    color: red;
 }
 .rgb-color-gray{
-   /* background: #035EAE url("../static/images/fondo.png") !important;*/
-    background-image:url("./static/images/fondo.png") !important ;
+   /* background: #035EAE url("../static/images/fondo.png") !important;
+    background:url("../../images/asdasdasd.png") !important ;
+    background-size: 100% 5% !important;*/
+    background: #fff;
+
 }
 .box-shadow-orange{
     box-shadow: 0 0 1px orange inset !important;
     border-bottom: 2px solid black;
+}
+.box-shadow-header{
+    box-shadow:0 0 80px white  inset,0 0 150px white  inset,0 0 10px #2314ff inset,0 -10px 10px white  inset,0 0 120px orange  inset !important;
+}
+.box-shadow-buscador-orange{
+    box-shadow: 0 -4px 35px orange ,0 1px 20px white !important;
+    border-top: 1px solid orange !important;
 }
 .text-color-white{
     color: white;
@@ -231,11 +266,12 @@ height: 30px !important;
 	height: 460px;
 	border: 5px solid #fff;
 	border: 5px solid rgba(255,255,255,0.9);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.8);
 }
 
 .sp-content {
-    background: #7d7f72 url(../static/images/grid.png) repeat scroll 0 0 !important;
+    /*lo ke define a el fondo el color de las imagenes del slider*/
+    background: #579ca3 url(../../images/grid.png) repeat scroll 0 0 !important;
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -243,10 +279,11 @@ height: 30px !important;
 }
 
 .sp-parallax-bg {
-    background: url(../static/images/map.png) repeat-x scroll 0 0;
+    background: url(../../images/map.png) repeat-x scroll 0 0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
+    box-shadow:0px 0px 10px black inset !important;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -282,11 +319,11 @@ height: 30px !important;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    -webkit-transition: background-color linear infinite;
-    -moz-transition: background-color linear infinite;
-    -o-transition: background-color linear infinite;
-    -ms-transition: background-color linear infinite;
-    transition: background-color linear infinite;
+    -webkit-transition: background-color linear 0.6s;
+    -moz-transition: background-color linear 0.6s;
+    -o-transition: background-color linear 0.6s;
+    -ms-transition: background-color linear 0.6s;
+    transition: background-color linear 0.6s;
 }
 .sp-slideshow input:checked + label {
 	background-color: #fff;
