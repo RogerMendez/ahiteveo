@@ -4,7 +4,7 @@ Formulario
 {% endblock %}
 
 {% block cuerpo %}
-<form method="post" action="" class="form-horizontal">{% csrf_token %}
+<form enctype="multipart/form-data" method="post" action="" class="form-horizontal">{% csrf_token %}
   <fieldset>
     <legend>{% block legend %}
     Formulario

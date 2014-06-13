@@ -1,0 +1,16 @@
+{% extends 'form.html' %}
+{% block title %}
+Registrar Categoria
+{% endblock %}
+{% block menuopciones %}
+{% include 'categorias/_menu.html' %}
+{% endblock %}
+{% block submit %}
+Guardar
+{% endblock %}
+{% block legend %}
+Registrar Categoria
+{% endblock %}
+{% block cancel %}
+{% url 'productos.views.index' %}
+{% endblock %}

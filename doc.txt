@@ -8,4 +8,4 @@ ahiteveo_db
 easy_install south
 
 #synchronize database
-python manage.py syncdb
+python manage.py migrate

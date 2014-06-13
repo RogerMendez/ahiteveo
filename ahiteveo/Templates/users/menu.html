@@ -1,0 +1,9 @@
+<div class="list-group">
+    <a href="{% url 'users.views.perfil' %}" class="list-group-item active">Opciones de Usuario</a>
+    <a href="{% url 'users.views.reset_pass' %}" class="list-group-item">Cambiar Contraseña</a>
+    {% if user.tipo != None %}
+        <a href="{% url 'users.views.edit_perfil' %}" class="list-group-item">Edita tu Perfil</a>
+    {% else %}
+        <a href="{% url 'users.views.complete_perfil' %}" class="list-group-item">Completa tu Perfil</a>
+    {% endif %}
+</div>

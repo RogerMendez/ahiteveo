@@ -1,0 +1,41 @@
+{% extends 'form.html' %}
+{% block title %}
+Nuevo Usuario
+{% endblock %}
+{% block legend %}
+Registro de Usuario
+{% endblock %}
+{% block cuerpo_formulario %}
+    {% for field in formemail %}
+        {% if field.errors %}
+            <div class="alert alert-dismissable alert-danger">
+              {{ field.errors }}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            <div class="col-lg-9">
+                {{ field }}
+            </div>
+            {% if field.help_text %}
+                <p class="text-muted">{{ field.help_text }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+    {% for field in formuser %}
+        {% if field.errors %}
+            <div class="alert alert-dismissable alert-danger">
+              {{ field.errors }}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            <div class="col-lg-9">
+                {{ field }}
+            </div>
+            {% if field.help_text %}
+                <p class="text-muted">{{ field.help_text }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

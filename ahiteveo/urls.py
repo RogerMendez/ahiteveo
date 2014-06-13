@@ -1,26 +1,26 @@
 from django.conf.urls import patterns, include, url
-from django.conf import settings
 from django.contrib import admin
-admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^media/(?P<path>.*)$','django.views.static.serve', {'document_root':settings.MEDIA_ROOT,} ),
-    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-    url(r'^admin/', include(admin.site.urls)),
-
     url(r'^$', 'users.views.home'),
     # url(r'^blog/', include('blog.urls')),
+
+    url(r'^admin/', include(admin.site.urls)),
+
     #USUARIOS
-    url(r'^login/$', 'users.views.loguet_in'),
-    url(r'^perfil/$', 'users.views.private'),
-    url(r'^user/resetpass/$', 'users.views.reset_pass'),
-    url(r'^logout/$', 'users.views.loguet_out'),
     url(r'^user/new/$', 'users.views.new_user'),
-    url(r'^user/confirmar/$', 'users.views.confirmation_user'),
+    url(r'^login/$', 'users.views.loguet_in'),
+    url(r'^logout/$', 'users.views.loguet_out'),
+    url(r'^perfil/$', 'users.views.perfil'),
+    url(r'^user/resetpass/$', 'users.views.reset_pass'),
+    url(r'^user/perfil/new/$', 'users.views.complete_perfil'),
+    url(r'^user/perfil/edit/$', 'users.views.edit_perfil'),
 
-    #PROFILES
-    url(r'^profile/complete/$', 'users.views.complete_profile'),
+    #CATEGORIAS
+    url(r'^category/$', 'productos.views.index'),
+    url(r'^category/new/$', 'productos.views.new_categoria'),
 
-    
+    #PRODUCTOS
+    url(r'^product/new/$', 'productos.views.new_producto'),
 )

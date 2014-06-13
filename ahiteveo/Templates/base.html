@@ -1,115 +1,59 @@
-<!DOCTYPE html>
+{% load staticfiles %}
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Plantilla básica de Bootstrap</title>
-
-    <!-- CSS de Bootstrap -->
-    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-theme.css" rel="stylesheet" media="screen">
-    <link href="{{ STATIC_URL }}bootstrap/css/dashboard.css" rel="stylesheet" media="screen">
-    <link href="{{ STATIC_URL }}bootstrap/fonts/glyphicons-halflings-regular.svg" rel="stylesheet" media="screen">
-    <link href="{{ STATIC_URL }}bootstrap/css/styles.css" rel="stylesheet" media="screen">
-
-
-    <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
+	<meta charset="UTF-8">
+	<title>{% block title %}
+    AhiteVeo
+	{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'teme/bootstrap.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'teme/bootswatch.min.css' %}">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
     <![endif]-->
 </head>
-<body cz-shortcut-listen="true">
-<!-- Librería jQuery requerida por los plugins de JavaScript -->
-<script src="{{ STATIC_URL }}js/jquery.js"></script>
+<body>
+	{% include '_menu.html' %}
+    <br/>
+    {% if messages %}
+        <div class="row">
 
-{% include '_header.html' %}
+            {% for message in messages %}
+                <div class="alert alert-dismissable alert-success {{ message.tags }}">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Mensaje!</strong> {{ message|safe }}.
+                </div>
+            {% endfor %}
 
-<div class="container-fluid  margin-top">
-    <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            {% include '_menu.html' %}
         </div>
-        <div class="col-sm-12 col-sm-offset-3 col-md-8 col-md-offset-2 main">
-            {% block cuerpo %}
-                <div class="panel panel-default">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading text-center">
-                        <div class="pull-left"><a class="glyphicon glyphicon-circle-arrow-left" href="#"></a></div>
-                        <b>Title Form</b></div>
-                    <div class="panel-body">
-                        <h2>Forms</h2>
+    {% endif %}
 
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                                </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3">
+                                {% block menuopciones %}
+                                {% endblock %}
                             </div>
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3"
-                                           placeholder="Password">
-                                </div>
+                            <div class="col-md-9">
+                                {% block cuerpo %}
+                                    <h1>Este es el Cuerpo</h1>
+                                {% endblock %}
                             </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Remember me
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-
-                        <h2>Tables</h2>
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            </tbody>
-                        </table>
+                        </div>
                     </div>
                 </div>
-            {% endblock cuerpo %}
-        </div>
-    </div>
-</div>
-<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
+			</div>
+		</div>
+	</div>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/bootswatch.js' %}"></script>
 </body>
 </html>

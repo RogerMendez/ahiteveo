@@ -1,0 +1,59 @@
+{% extends 'form_upload.html' %}
+{% block title %}
+Completar Perfil
+{% endblock %}
+{% block menuopciones %}
+{% include 'users/menu.html' %}
+{% endblock %}
+{% block legend %}
+Completar Perfil
+{% endblock %}
+{% block cuerpo_formulario %}
+    {% for field in formuser %}
+        {% if field.errors %}
+            <div class="alert alert-dismissable alert-danger">
+              {{ field.errors }}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            <div class="col-lg-9">
+                {{ field }}
+            </div>
+            {% if field.help_text %}
+                <p class="text-muted">{{ field.help_text }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+    {% for field in formperfil %}
+        {% if field.errors %}
+            <div class="alert alert-dismissable alert-danger">
+              {{ field.errors }}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            <div class="col-lg-9">
+                {{ field }}
+            </div>
+            {% if field.help_text %}
+                <p class="text-muted">{{ field.help_text }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+        });
+        $('#id_tipo').blur(function(){
+            if($('#id_tipo').val() == 'Empresa'){
+                //$('#id_last_name').attr("type", 'hidden');
+                $( "#id_last_name" ).parent().parent().css( "display", "none" );
+            }else{
+                $( "#id_last_name" ).parent().parent().css( "display", "inline" );
+            }
+        });
+    </script>
+{% endblock %}
+{% block cancel %}
+{% url 'users.views.perfil' %}
+{% endblock %}

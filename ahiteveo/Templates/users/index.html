@@ -1,0 +1,9 @@
+{# encoding:utf-8 #}
+{% extends 'base.html' %}
+{% block title %}{{ user.username|upper }}{% endblock %}
+{% block menuopciones %}
+{% include 'users/menu.html' %}
+{% endblock %}
+{% block cuerpo %}
+    <h3>Bienvenido <strong>{{ user.username|upper }}</strong></h3>
+{% endblock %}
