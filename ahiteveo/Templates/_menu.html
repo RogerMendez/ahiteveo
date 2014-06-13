@@ -16,3 +16,61 @@
     <li><a href="">One more nav</a></li>
     <li><a href="">Another nav item</a></li>
 </ul-->
+ <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+            Group #1<span class="badge pull-right">2</span>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <ul class="nav nav-sidebar">
+            <li><a href="#">option</a></li>
+            <li><a href="#">option </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+            Group #2<span class="badge pull-right">4</span>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul class="nav nav-sidebar">
+            <li><a href="#">option</a></li>
+            <li><a href="#">option </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+            Group #3<span class="badge pull-right">2</span>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <ul class="nav nav-sidebar">
+            <li><a href="#">option</a></li>
+            <li><a href="#">option </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+      $( document ).ready(function() {
+          $('.collapse').collapse()
+      });
+  </script>
