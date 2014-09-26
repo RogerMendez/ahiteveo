@@ -47,8 +47,11 @@ def new_user(request):
             u = formuser.save()
             u.email = email
             u.is_active = False
-            u.code_activation = code
             u.save()
+            p = Perfil.objects.create(
+                code_activation = code,
+                usuario = u,
+            )
             subject = 'Confirmacion De Correo Electronico'
             text_content = 'Mensaje...nLinea 2nLinea3'
             html_content = '<h2>Confirmacion de Correo</h2><p>Haga click en el siguiente Enlace</p><p><a href="http://127.0.0.1:8000/user/confirmar/?code='+code+'">Confirmar Cuenta</a></p>'
@@ -70,10 +73,12 @@ def new_user(request):
 
 def confirmation_user(request):
     code = request.GET['code']
-    if User.objects.filter(code_activation = code):
-        u = User.objects.get(code_activation = code)
+    if Perfil.objects.filter(code_activation = code):
+        p = Perfil.objects.get(code_activation = code)
+        u = User.objects.get(pk = p.usuario_id)
         u.is_active = True
-        u.code_activation += u.username
+        p.code_activation += u.username
+        p.save()
         u.save()
         msm = 'Su cuenta fue Activada Correctamente'
         messages.add_message(request, messages.INFO, msm)
@@ -99,15 +104,15 @@ def loguet_in(request):
                         return HttpResponseRedirect(str(request.GET['next']))
                     else:
                         msm = "Inicio de Sesion Existoso <strong>Gracias Por Su Visita</strong>"
-                        messages.add_message(request, messages.INFO, msm)
+                        messages.add_message(request, messages.SUCCESS, msm)
                         return HttpResponseRedirect(reverse(perfil))
                 else:
-                    msm = "Su Cuenta No Esta Activada <strong>Verifique su Correo Electronico Para Activar La Cuenta</strong>"
-                    messages.add_message(request, messages.INFO, msm)
+                    sms = "Su Cuenta No Esta Activada <strong>Verifique su Correo Electronico Para Activar La Cuenta</strong>"
+                    messages.warning(request, sms)
                     return HttpResponseRedirect(reverse(loguet_in))
             else:
-                msm = "Usted No Es Usuario Del Sistema<strong>Registrate</strong>"
-                messages.add_message(request, messages.INFO, msm)
+                msm = "Usted No Es Usuario Del Sistema - <strong>Registrate</strong>"
+                messages.add_message(request, messages.ERROR, msm)
                 return HttpResponseRedirect(reverse(loguet_in))
     else:
         formulario = AuthenticationForm()
@@ -136,26 +141,27 @@ def reset_pass(request):
     })
 
 @login_required(login_url='/login')
-def perfil(request):
+def index_perfil(request):
     return render(request, 'users/index.html')
 
 
 @login_required(login_url='/login')
 def complete_perfil(request):
+    perfil = Perfil.objects.get(usuario = request.user)
     if request.method == 'POST':
-        formperfil = PerfilForm(request.POST, request.FILES)
+        formperfil = PerfilForm(request.POST, request.FILES, instance=perfil)
         formuser = UserForm(request.POST, instance=request.user)
         if formuser.is_valid() and formperfil.is_valid():
             p = formperfil.save()
             u = formuser.save()
-            p.user = request.user
-            p.save()
+            #p.user = request.user
+            #p.save()
             msm = "Perfil Completado Correctamente"
             messages.add_message(request, messages.INFO, msm)
-            return HttpResponseRedirect(reverse(perfil))
+            return HttpResponseRedirect(reverse(index_perfil))
     else:
-        formperfil = PerfilForm()
-        formuser = UserForm()
+        formperfil = PerfilForm(instance=perfil)
+        formuser = UserForm(instance=request.user)
     return render(request, 'users/new_perfil.html', {
         'formperfil':formperfil,
         'formuser':formuser,
@@ -163,7 +169,7 @@ def complete_perfil(request):
 
 @login_required(login_url='/login')
 def edit_perfil(request):
-    per = Perfil.objects.get(user = request.user)
+    per = Perfil.objects.get(usuario = request.user)
     if request.method == 'POST':
         formperfil = PerfilForm(request.POST, request.FILES, instance=per)
         formuser = UserForm(request.POST, instance=request.user)
@@ -174,7 +180,7 @@ def edit_perfil(request):
             p.save()
             msm = "Perfil Completado Correctamente"
             messages.add_message(request, messages.INFO, msm)
-            return HttpResponseRedirect(reverse(perfil))
+            return HttpResponseRedirect(reverse(index_perfil))
     else:
         formperfil = PerfilForm(instance=per)
         formuser = UserForm(instance=request.user)

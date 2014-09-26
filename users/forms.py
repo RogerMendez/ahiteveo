@@ -10,7 +10,8 @@ class EmailForm(forms.Form):
 class PerfilForm(ModelForm):
     class Meta:
         model = Perfil
-        exclude = ['user']
+        fields = '__all__'
+        exclude = ['usuario', 'code_activation']
         widgets = {
             'fecha_nacimiento':TextInput(attrs={'type':'date'}),
             }
@@ -18,5 +19,5 @@ class PerfilForm(ModelForm):
 class UserForm(ModelForm):
     class Meta:
         model = User
-        exclude = ['username', 'password', 'is_staff', 'is_superuser', 'last_login', 'is_active', 'date_joined', 'user_permissions', 'groups', 'email', 'code_activation']
-        fields = ('tipo', 'first_name', 'last_name')
+        fields = "__all__"
+        exclude = ['username', 'password', 'is_staff', 'is_superuser', 'last_login', 'is_active', 'date_joined', 'user_permissions', 'groups', 'email']

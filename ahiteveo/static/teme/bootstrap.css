@@ -1665,6 +1665,7 @@ input[type="checkbox"] {
 }
 input[type="file"] {
   display: block;
+  vertical-align: middle;
 }
 input[type="range"] {
   display: block;
@@ -4484,7 +4485,7 @@ a.thumbnail.active {
 .alert-warning .alert-link {
   color: #e6e6e6;
 }
-.alert-danger {
+.alert-error {
   background-color: #e74c3c;
   border-color: #e74c3c;
   color: #ffffff;

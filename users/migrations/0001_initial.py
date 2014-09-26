@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('nombre', models.CharField(max_length=b'100')),
             ],
             options={
-                'verbose_name_plural': b'Ciudades',
+                'verbose_name_plural': 'Ciudades',
             },
             bases=(models.Model,),
         ),
@@ -30,16 +30,10 @@ class Migration(migrations.Migration):
                 ('nombre', models.CharField(max_length=b'100')),
             ],
             options={
-                'ordering': [b'nombre'],
-                'verbose_name_plural': b'Paices',
+                'ordering': ['nombre'],
+                'verbose_name_plural': 'Paices',
             },
             bases=(models.Model,),
-        ),
-        migrations.AddField(
-            model_name='ciudad',
-            name='pais',
-            field=models.ForeignKey(to='users.Pais', to_field='id'),
-            preserve_default=True,
         ),
         migrations.CreateModel(
             name='Perfil',
@@ -48,11 +42,20 @@ class Migration(migrations.Migration):
                 ('avatar', models.ImageField(upload_to=b'avatar')),
                 ('telefono', models.CharField(max_length=b'10')),
                 ('direccion', models.CharField(max_length=b'100')),
-                ('ciudad', models.ForeignKey(to_field='id', blank=True, to='users.Ciudad', null=True)),
-                ('user', models.OneToOneField(null=True, to_field='id', to=settings.AUTH_USER_MODEL)),
+                ('fecha_nacimiento', models.DateField(default=None, verbose_name=b'Fecha de Nacimiento')),
+                ('code_activation', models.CharField(max_length=b'100', null=True, blank=True)),
+                ('tipo', models.CharField(blank=True, max_length=b'10', null=True, choices=[(b'Empresa', b'Empresa'), (b'Personal', b'Personal')])),
+                ('ciudad', models.ForeignKey(blank=True, to='users.Ciudad', null=True)),
+                ('usuario', models.OneToOneField(null=True, to=settings.AUTH_USER_MODEL)),
             ],
             options={
             },
             bases=(models.Model,),
+        ),
+        migrations.AddField(
+            model_name='ciudad',
+            name='pais',
+            field=models.ForeignKey(to='users.Pais'),
+            preserve_default=True,
         ),
     ]

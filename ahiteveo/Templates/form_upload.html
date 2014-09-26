@@ -13,7 +13,7 @@ Formulario
     {% block cuerpo_formulario %}
         {% for field in formulario %}
             {% if field.errors %}
-                <div class="alert alert-dismissable alert-danger">
+                <div class="alert alert-dismissable alert-error">
                   {{ field.errors }}
                 </div>
             {% endif %}

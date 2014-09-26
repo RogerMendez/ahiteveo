@@ -33,7 +33,7 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'users.views.loguet_out' %}">Cerrar Sesion</a></li>
-                    <li><a href="{% url 'users.views.perfil' %}">{{ user.username }}</a></li>
+                    <li><a href="{% url 'users.views.index_perfil' %}">{{ user.username }}</a></li>
                 {% else %}
                     <li><a href="{% url 'users.views.loguet_in' %}">Iniciar Sesion</a></li>
                     <li><a href="{% url 'users.views.new_user' %}">Registrate</a></li>

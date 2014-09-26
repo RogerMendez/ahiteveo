@@ -11,7 +11,7 @@ Completar Perfil
 {% block cuerpo_formulario %}
     {% for field in formuser %}
         {% if field.errors %}
-            <div class="alert alert-dismissable alert-danger">
+            <div class="alert alert-dismissable alert-error">
               {{ field.errors }}
             </div>
         {% endif %}
@@ -27,7 +27,7 @@ Completar Perfil
     {% endfor %}
     {% for field in formperfil %}
         {% if field.errors %}
-            <div class="alert alert-dismissable alert-danger">
+            <div class="alert alert-dismissable alert-error">
               {{ field.errors }}
             </div>
         {% endif %}
@@ -55,5 +55,5 @@ Completar Perfil
     </script>
 {% endblock %}
 {% block cancel %}
-{% url 'users.views.perfil' %}
+{% url 'users.views.index_perfil' %}
 {% endblock %}

@@ -19,20 +19,18 @@
 <body>
 	{% include '_menu.html' %}
     <br/>
-    {% if messages %}
-        <div class="row">
-
+	<div class="container">
+        {% if messages %}
             {% for message in messages %}
-                <div class="alert alert-dismissable alert-success {{ message.tags }}">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    <strong>Mensaje!</strong> {{ message|safe }}.
+                <div class="row">
+                    <div data-alert class="alert alert-dismissable alert-{{ message.tags }}">
+                        <p class="margin0 fi">
+                            {{ message|safe }}
+                        </p>
+                    </div>
                 </div>
             {% endfor %}
-
-        </div>
-    {% endif %}
-
-	<div class="container">
+        {% endif %}
 		<div class="row">
 			<div class="col-md-12">
                 <div class="row">
