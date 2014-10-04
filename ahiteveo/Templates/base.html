@@ -38,6 +38,59 @@
                         <div class="row">
                             <div class="col-md-3">
                                 {% block menuopciones %}
+                                    {% if categorias %}
+                                        <div class="panel-group" id="accordion">
+                                            <div class="panel panel-default">
+                                                {% for categoria in categorias %}
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
+                                                            <a id="{{ categoria.id }}" href="#collapse{{ categoria.nombre }}" data-toggle="collapse" data-parent="#accordion" class="ajax" >
+                                                                {{ categoria.nombre }}
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="collapse{{ categoria.nombre }}" class="panel-collapse collapse in">
+
+                                                    </div>
+
+                                                    <script>
+                                                        $( document ).ready(function() {
+                                                            var id = "#{{ categoria.id }}";
+                                                            var cont = 1;
+                                                            $(id).click(function(){
+                                                                var a = $(this);
+                                                                cont++;
+                                                                var divid = "#collapse{{ categoria.nombre }}";
+                                                                var div = $(divid);
+                                                                if(cont%2 == 0){
+                                                                    $.ajax({
+                                                                        data:{'nombre': "{{ categoria.nombre }}"},
+                                                                        url:"{% url 'productos.views.buscar_tipo_ajax' %}",
+                                                                        type: "GET",
+                                                                        success: function(data){
+                                                                            div.html(data);
+                                                                        },
+                                                                        failure: function(data){
+                                                                            console.log('error');
+                                                                        }
+                                                                    });
+                                                                }
+                                                                else{
+                                                                    div.html('');
+                                                                }
+
+                                                            });
+                                                        });
+                                                    </script>
+                                                {% endfor %}
+                                                <script>
+                                                    $(document).ready(function(){
+                                                        $('.collapse').collapse();
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                    {% endif %}
                                 {% endblock %}
                             </div>
                             <div class="col-md-9">

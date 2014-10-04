@@ -13,7 +13,9 @@ from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives
 from users.forms import EmailForm, PerfilForm, UserForm
 from users.models import Perfil
-# Create your views here.
+
+from productos.models import Categorias
+
 import random
 
 def admin_log_addnition(request, objecto, mensaje):
@@ -35,7 +37,10 @@ def code_activation_create():
     return code
 
 def home(request):
-    return render(request, 'base.html')
+    categorias = Categorias.objects.filter(estado = True)
+    return render(request, 'base.html', {
+        'categorias':categorias,
+    })
 
 def new_user(request):
     if request.method == 'POST':
@@ -88,7 +93,7 @@ def confirmation_user(request):
 
 def loguet_in(request):
     if not request.user.is_anonymous():
-        return HttpResponseRedirect(reverse(perfil))
+        return HttpResponseRedirect(reverse(index_perfil))
     if request.method == 'POST':
         formulario = AuthenticationForm(request.POST)
         if formulario.is_valid:
@@ -105,7 +110,7 @@ def loguet_in(request):
                     else:
                         msm = "Inicio de Sesion Existoso <strong>Gracias Por Su Visita</strong>"
                         messages.add_message(request, messages.SUCCESS, msm)
-                        return HttpResponseRedirect(reverse(perfil))
+                        return HttpResponseRedirect(reverse(index_perfil))
                 else:
                     sms = "Su Cuenta No Esta Activada <strong>Verifique su Correo Electronico Para Activar La Cuenta</strong>"
                     messages.warning(request, sms)

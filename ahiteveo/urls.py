@@ -22,6 +22,11 @@ urlpatterns = patterns('',
     url(r'^category/$', 'productos.views.index'),
     url(r'^category/new/$', 'productos.views.new_categoria'),
 
+    #TIPO
+    url(r'^type/new/$', 'productos.views.new_tipo'),
+
+    url(r'^type/search/ajax/$', 'productos.views.buscar_tipo_ajax'),
+
     #PRODUCTOS
     url(r'^product/new/$', 'productos.views.new_producto'),
 )

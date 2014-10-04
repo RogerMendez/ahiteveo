@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class Categorias(models.Model):
     nombre = models.CharField(max_length='100', unique=True)
     registro =  models.DateTimeField(auto_now_add=True)
-    estado = models.BooleanField(default=False)
+    estado = models.BooleanField(default=True)
     usuario = models.ForeignKey(User, null=True)
     def __unicode__(self):
         return self.nombre
@@ -15,12 +15,12 @@ class Categorias(models.Model):
 class Tipo(models.Model):
     nombre = models.CharField(max_length='100', unique=True)
     registro =  models.DateTimeField(auto_now_add=True)
-    estado = models.BooleanField(default=False)
+    estado = models.BooleanField(default=True)
     categoria = models.ForeignKey(Categorias, null=True)
     def __unicode__(self):
         return self.categoria.nombre + " - " + self.nombre
     class Meta:
-        ordering = ['categoria']
+        ordering = ['nombre']
         verbose_name_plural = 'Tipos'
 
 class Productos(models.Model):
