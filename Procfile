@@ -1,1 +1,1 @@
-web: gunicorn ahiteveo.wsgi --log-file -
+web: gunicorn teveo.wsgi --log-file -

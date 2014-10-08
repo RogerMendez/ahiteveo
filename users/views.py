@@ -18,6 +18,7 @@ from productos.models import Categorias
 
 import random
 
+
 def admin_log_addnition(request, objecto, mensaje):
     LogEntry.objects.log_action(
                 user_id         = request.user.pk,
