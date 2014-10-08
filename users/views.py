@@ -60,7 +60,7 @@ def new_user(request):
             )
             subject = 'Confirmacion De Correo Electronico'
             text_content = 'Mensaje...nLinea 2nLinea3'
-            html_content = '<h2>Confirmacion de Correo</h2><p>Haga click en el siguiente Enlace</p><p><a href="http://127.0.0.1:8000/user/confirmar/?code='+code+'">Confirmar Cuenta</a></p>'
+            html_content = '<h2>Confirmacion de Correo</h2><p>Haga click en el siguiente Enlace</p><p><a href="http://ahiteveo1.herokuapp.com/user/confirmar/?code='+code+'">Confirmar Cuenta</a></p>'
             from_email = '"AhiTeVeo" <sieboliva@gmail.com>'
             to = email
             msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
