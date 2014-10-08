@@ -1,6 +1,9 @@
 #################
 ## Eclipse
 #################
+venv
+*.pyc
+staticfiles
 *.pyc
 /.idea
 /obj
