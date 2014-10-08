@@ -72,7 +72,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'es-BO'
 
-TIME_ZONE = 'America/La_Pa'
+TIME_ZONE = 'America/La_Paz'
 
 USE_I18N = True
 
