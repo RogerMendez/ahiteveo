@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+Mis Productos
+{% endblock %}
+{% block menuopciones %}
+{% include 'productos/_menu.html' %}
+{% endblock %}
+{% block cuerpo %}
+<div class="row">
+    <h2>Mis Productos</h2>
+    <div class="col-lg-7">
+        {% for producto in productos %}
+            <div class="panel {% cycle 'panel-primary' 'panel-success' 'panel-danger' 'panel-info' 'panel-warning' %}">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ producto.nombre }}</h3>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        {{ producto.descripcion }}
+                    </p>
+                    <p class="border-color-black"></p>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <form enctype="multipart/form-data" action="{% url 'productos.views.new_imagen' producto.id %}" method="post">{% csrf_token %}
+                                {{ formulario.as_p }}
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </form>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="" class="btn btn-default">Ver Imagenes</a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-5"></div>
+</div>
+{% endblock %}

@@ -1,7 +1,15 @@
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-home"></span> Inicio</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'users.views.index_perfil' %}" class="navbar-brand"><span class="glyphicon glyphicon-home"></span>
+                    {{ user.username|upper }} | AhiTeVeo
+                </a>
+            {% else %}
+                <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-home"></span>
+                    AhiTeVeo
+                </a>
+            {% endif %}
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -18,26 +26,14 @@
                         <a href="{% url 'productos.views.new_producto' %}">Productos</a>
                     </li>
                 {% endif %}
-                <li>
-                    <a href="http://news.bootswatch.com">Blog</a>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Download <span class="caret"></span></a>
-                    <ul class="dropdown-menu" aria-labelledby="download">
-                        <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
-                        <li><a href="./bootstrap.css">bootstrap.css</a></li>
-                        <li class="divider"></li>
-                        <li><a href="./variables.less">variables.less</a></li>
-                        <li><a href="./bootswatch.less">bootswatch.less</a></li>
-                    </ul>
-                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'users.views.loguet_out' %}">Cerrar Sesion</a></li>
-                    <li><a href="{% url 'users.views.index_perfil' %}">{{ user.username }}</a></li>
+                    <li>
+                        <a href="{% url 'users.views.loguet_out' %}" class="fg-color-yellow">Cerrar Sesion</a>
+                    </li>
                 {% else %}
-                    <li><a href="{% url 'users.views.loguet_in' %}">Iniciar Sesion</a></li>
+                    <li><a href="{% url 'users.views.loguet_in' %}" class="fg-color-orange">Iniciar Sesion</a></li>
                     <li><a href="{% url 'users.views.new_user' %}">Registrate</a></li>
                 {% endif %}
             </ul>

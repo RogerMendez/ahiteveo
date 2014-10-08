@@ -1,5 +1,5 @@
 #encoding:utf-8
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, Http404, JsonResponse
 from django.template import RequestContext
 from django.template.loader import render_to_string
@@ -13,8 +13,8 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 
-from productos.models import Categorias, Tipo
-from productos.form import CategoriaForm, ProductoForm, TipoForm
+from productos.models import Categorias, Tipo, Productos, Imagenes
+from productos.form import CategoriaForm, ProductoForm, TipoForm, ImagenesForm
 
 def admin_log_addnition(request, objecto, mensaje):
     LogEntry.objects.log_action(
@@ -82,22 +82,42 @@ def buscar_tipo_ajax(request):
     else:
         raise Http404
 
-
-
+@login_required(login_url='/login')
+def index_productos(request):
+    productos = Productos.objects.filter(usuario = request.user)
+    imagenes = Imagenes.objects.filter(producto = productos)
+    formulario = ImagenesForm()
+    return render(request, 'productos/index.html',{
+        'productos':productos,
+        'imagenes':imagenes,
+        'formulario':formulario,
+    })
 
 @login_required(login_url='/login')
 def new_producto(request):
-
     if request.method == 'POST':
         formulario = ProductoForm(request.POST)
         if formulario.is_valid():
             p = formulario.save()
             p.usuario = request.user
             p.save()
-            return HttpResponseRedirect(reverse(index))
+            return HttpResponseRedirect(reverse(index_productos))
     else:
         formulario = ProductoForm()
     return render(request, 'productos/new_producto.html', {
         'formulario':formulario,
-
     })
+
+@login_required(login_url='/login')
+def new_imagen(request, producto_id):
+    producto = get_object_or_404(Productos, pk = producto_id)
+    if request.method == "POST":
+        formulario = ImagenesForm(request.POST, request.FILES)
+        if formulario.is_valid():
+            i = formulario.save()
+            i.producto = producto
+            i.save()
+            sms = "Imagen Guardada Correctamente"
+            messages.success(request, sms)
+            return HttpResponseRedirect(reverse(index_productos))
+    return HttpResponseRedirect(reverse(index_productos))

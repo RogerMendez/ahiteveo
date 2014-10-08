@@ -147,7 +147,10 @@ def reset_pass(request):
 
 @login_required(login_url='/login')
 def index_perfil(request):
-    return render(request, 'users/index.html')
+    perfil = Perfil.objects.get(usuario = request.user)
+    return render(request, 'users/index.html',{
+        'perfil':perfil,
+    })
 
 
 @login_required(login_url='/login')

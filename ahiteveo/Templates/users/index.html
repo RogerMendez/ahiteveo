@@ -5,5 +5,31 @@
 {% include 'users/menu.html' %}
 {% endblock %}
 {% block cuerpo %}
-    <h3>Bienvenido <strong>{{ user.username|upper }}</strong></h3>
+    <div class="row">
+        <h2>Datos de Usuarios</h2>
+        <div class="col-md-6 border-color-blueLight">
+            <p>
+                <strong>Nombre Completo: </strong>{{ user.first_name }} {{ user.last_name }}
+            </p>
+            <p>
+                <strong>Dirección: </strong>{{ perfil.direccion }}
+            </p>
+            <p>
+                <strong>Telfono/Celular: </strong>{{ perfil.telefono }}
+            </p>
+            <p>
+                <strong>Tipo de Usuario: </strong>{{ perfil.tipo }}
+            </p>
+            <p>
+                <strong>Pais - Cuidad: </strong>{{ perfil.ciudad }}
+            </p>
+            <p>
+                <strong>Correo Electronico: </strong>{{ user.email }}
+            </p>
+        </div>
+        <div class="col-md-3">
+            <img src="/media/{{ perfil.avatar }}" alt="{{ user.first_name }}" class="img-responsive img-thumbnail"/>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
 {% endblock %}

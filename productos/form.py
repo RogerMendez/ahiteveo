@@ -1,5 +1,5 @@
 from django.forms import ModelForm, Textarea
-from productos.models import Categorias, Productos, Tipo
+from productos.models import Categorias, Productos, Tipo, Imagenes
 
 class CategoriaForm(ModelForm):
     class Meta:
@@ -18,3 +18,8 @@ class TipoForm(ModelForm):
     class Meta:
         model = Tipo
         exclude = ['estado']
+
+class ImagenesForm(ModelForm):
+    class Meta:
+        model = Imagenes
+        exclude = ['producto']

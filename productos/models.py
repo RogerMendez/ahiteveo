@@ -28,6 +28,12 @@ class Productos(models.Model):
     descripcion = models.TextField()
     registro = models.DateTimeField(auto_now_add=True)
     tipo = models.ManyToManyField(Tipo)
-    usuario = models.ForeignKey(User, unique=True)
+    usuario = models.ForeignKey(User, null=True, blank=True)
     def __unicode__(self):
         return self.nombre
+
+class Imagenes(models.Model):
+    imagen = models.ImageField(upload_to='productos', verbose_name='Seleccionar Imagen')
+    producto = models.ForeignKey(Productos, null=True, blank=True)
+    def __unicode__(self):
+        return self.producto.nombre

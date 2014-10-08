@@ -1,15 +1,4 @@
-<div class="panel panel-success">
-    <div class="panel-heading">
-        <h3 class="panel-title">
-            <a href="">Productos</a>
-        </h3>
-    </div>
-    <div class="panel-body">
-        <a href="">Nuevo Producto</a>
-        <ul>
-            <li>
-                <a href="">Nuevo Producto</a>
-            </li>
-        </ul>
-    </div>
+<div class="list-group">
+    <a href="{% url 'productos.views.index_productos' %}" class="list-group-item active">Mis Productos</a>
+    <a href="{% url 'productos.views.new_producto' %}" class="list-group-item">Nuevo Producto</a>
 </div>
