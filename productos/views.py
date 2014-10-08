@@ -29,8 +29,11 @@ def admin_log_addnition(request, objecto, mensaje):
 @login_required(login_url='/login')
 def index(request):
     categorias = Categorias.objects.all()
+    productos = Productos.objects.all()
+
     return render(request, 'categorias/index.html', {
         'categorias':categorias,
+        'productos': productos,
     })
 
 @login_required(login_url='/login')
