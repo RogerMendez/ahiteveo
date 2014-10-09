@@ -8,8 +8,8 @@ Registro de Usuario
 {% block cuerpo_formulario %}
     {% for field in formemail %}
         {% if field.errors %}
-            <div class="alert alert-dismissable alert-danger">
-              {{ field.errors }}
+            <div class="alert alert-dismissable alert-error">
+                {{ field.errors }}
             </div>
         {% endif %}
         <div class="form-group">
@@ -24,8 +24,8 @@ Registro de Usuario
     {% endfor %}
     {% for field in formuser %}
         {% if field.errors %}
-            <div class="alert alert-dismissable alert-danger">
-              {{ field.errors }}
+            <div class="alert alert-dismissable alert-error">
+                {{ field.errors }}
             </div>
         {% endif %}
         <div class="form-group">

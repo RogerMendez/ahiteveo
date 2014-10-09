@@ -2,7 +2,6 @@
     <h2>Productos</h2>
 
     <div class="col-lg-7">
-        {{ productos }}
         {% for producto in productos %}
             <div class="panel {% cycle 'panel-primary' 'panel-success' 'panel-danger' 'panel-info' 'panel-warning' %}">
                 <div class="panel-heading">

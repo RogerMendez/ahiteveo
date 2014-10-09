@@ -11,10 +11,10 @@ Completar Perfil
 {% block cuerpo_formulario %}
     {% for field in formuser %}
         {% if field.errors %}
-            <div class="alert alert-dismissable alert-error">
-              {{ field.errors }}
-            </div>
-        {% endif %}
+                <div class="alert alert-dismissable alert-error">
+                  {{ field.errors }}
+                </div>
+            {% endif %}
         <div class="form-group">
             {{ field.label_tag }}
             <div class="col-lg-9">
@@ -27,10 +27,10 @@ Completar Perfil
     {% endfor %}
     {% for field in formperfil %}
         {% if field.errors %}
-            <div class="alert alert-dismissable alert-error">
-              {{ field.errors }}
-            </div>
-        {% endif %}
+                <div class="alert alert-dismissable alert-error">
+                  {{ field.errors }}
+                </div>
+            {% endif %}
         <div class="form-group">
             {{ field.label_tag }}
             <div class="col-lg-9">

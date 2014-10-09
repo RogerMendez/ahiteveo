@@ -14,7 +14,7 @@ from django.core.mail import EmailMultiAlternatives
 from users.forms import EmailForm, PerfilForm, UserForm
 from users.models import Perfil
 
-from productos.models import Categorias
+from productos.models import Categorias, Productos
 
 import random
 
@@ -39,8 +39,10 @@ def code_activation_create():
 
 def home(request):
     categorias = Categorias.objects.filter(estado = True)
+    productos = Productos.objects.all()
     return render(request, 'base.html', {
         'categorias':categorias,
+        'productos':productos,
     })
 
 def new_user(request):
