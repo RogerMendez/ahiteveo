@@ -20,20 +20,38 @@ Mis Productos
                     </p>
                     <p class="border-color-black"></p>
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <form enctype="multipart/form-data" action="{% url 'productos.views.new_imagen' producto.id %}" method="post">{% csrf_token %}
                                 {{ formulario.as_p }}
                                 <button type="submit" class="btn btn-primary">Guardar</button>
+                                <a class="btn btn-info small images_ajax" id="{{ producto.id }}">Ver Imagenes</a>
                             </form>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="" class="btn btn-default">Ver Imagenes</a>
                         </div>
                     </div>
                 </div>
              </div>
         {% endfor %}
     </div>
-    <div class="col-md-5"></div>
+    <div class="col-md-5" id="img">
+    </div>
 </div>
+<script>
+$(document).ready(function(){
+    $(".images_ajax").click(function(e){
+        e.preventDefault();
+        var id = $(this).attr('id');
+        $.ajax({
+            data:{'id': id},
+            url:"{% url 'productos.views.imagenes_producto_ajax' %}",
+            type: "GET",
+            success: function(data){
+                $("#img").html(data);
+            },
+            failure: function(data){
+                console.log('error');
+            }
+        });
+    })
+});
+</script>
 {% endblock %}

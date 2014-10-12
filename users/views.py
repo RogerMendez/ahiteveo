@@ -14,6 +14,7 @@ from django.core.mail import EmailMultiAlternatives
 from users.forms import EmailForm, PerfilForm, UserForm
 from users.models import Perfil
 
+from productos.form import ProductoSearch
 from productos.models import Categorias, Productos
 
 import random
@@ -40,9 +41,14 @@ def code_activation_create():
 def home(request):
     categorias = Categorias.objects.filter(estado = True)
     productos = Productos.objects.all()
+    formulario = ProductoSearch(request.GET or None)
+    if formulario.is_valid():
+        texto = formulario.cleaned_data['texto']
+        productos = Productos.objects.filter(nombre__icontains = texto)
     return render(request, 'base.html', {
         'categorias':categorias,
         'productos':productos,
+        'formulario':formulario,
     })
 
 def new_user(request):

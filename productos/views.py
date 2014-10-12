@@ -96,6 +96,18 @@ def index_productos(request):
         'formulario':formulario,
     })
 
+def imagenes_producto_ajax(request):
+    if request.is_ajax():
+        id = request.GET['id']
+        producto = get_object_or_404(Productos, pk = id)
+        imagenes = Imagenes.objects.filter(producto = producto)
+        html = render_to_string('productos/ajax/imagenes_ajax.html', {
+            'imagenes':imagenes,
+        }, context_instance=RequestContext(request))
+        return JsonResponse(html, safe=False)
+    else:
+        raise Http404
+
 @login_required(login_url='/login')
 def new_producto(request):
     if request.method == 'POST':
