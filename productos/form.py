@@ -14,6 +14,7 @@ class ProductoForm(ModelForm):
         widgets = {
             'descripcion':Textarea(attrs={'class':'form-control'}),
             }
+
 class ProductoSearch(forms.Form):
     texto = forms.CharField(max_length='100', widget=TextInput(attrs={
         'class':'form-control',

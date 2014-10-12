@@ -35,6 +35,5 @@ urlpatterns = patterns('',
     url(r'^product/new/$', 'productos.views.new_producto'),
 
     url(r'^product/(?P<producto_id>\d+)/imagen/new$', 'productos.views.new_imagen'),
-
     url(r'^product/imagen/$', 'productos.views.imagenes_producto_ajax'),
 )
