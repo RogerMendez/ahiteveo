@@ -30,9 +30,9 @@ class Perfil(models.Model):
     tipo = models.CharField(max_length='10', choices=t, null=True, blank=True)
     usuario = models.OneToOneField(User, null=True)
     ciudad = models.ForeignKey(Ciudad, null=True, blank=True)
+    time = models.DateTimeField(null = True)
     def __unicode__(self):
         return self.usuario.username
     def edad(self):
         import datetime
         return self.fecha_nacimiento - datetime.datetime.now()
-

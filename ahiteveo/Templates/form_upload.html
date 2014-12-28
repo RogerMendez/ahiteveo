@@ -13,11 +13,11 @@ Formulario
     {% block cuerpo_formulario %}
         {% for field in formulario %}
             {% if field.errors %}
-                <div class="alert alert-dismissable alert-error">
+                <div class="alert alert-dismissable alert-danger">
                   {{ field.errors }}
                 </div>
             {% endif %}
-            <div class="form-group">
+            <div class="form-group {% if field.errors %}has-error{% endif %}">
                 {{ field.label_tag }}
                 <div class="col-lg-9">
                     {{ field }}

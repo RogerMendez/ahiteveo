@@ -7,3 +7,6 @@
 {% endblock %}
 {% block submit %}Entrar{% endblock %}
 {% block formcancelar %}{% endblock %}
+{% block information %}
+    <a href="{% url 'users.views.sent_code_reset_pass' %}"><span class="glyphicon glyphicon-check"></span> Olvidaste Tu Contraseña</a>
+{% endblock %}

@@ -1,0 +1,34 @@
+{# encoding:utf-8 #}
+{% extends 'base.html' %}
+{% block title %}Enviar Codigo{% endblock %}
+{% block cuerpo %}
+    <div class="row">
+        <div class="col-md-12">
+            <h2><strong class="fg-color-black">Eviarme Información para recupera mi contraseña</strong></h2>
+            <p class="lead bg-color-blueLight">
+                <strong>Escribe el correo electronico con el que te registraste</strong>
+                A este correo electronico enviaremos un enlace para cambiar tu contraseña
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+<form method="post" action="" class="form-horizontal">{% csrf_token %}
+    <fieldset>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <a href="{% block cancel %}/{% endblock %}" class="btn btn-danger">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+        </div>
+    </div>
+{% endblock %}

@@ -20,6 +20,8 @@ urlpatterns = patterns('',
     url(r'^user/resetpass/$', 'users.views.reset_pass'),
     url(r'^user/perfil/new/$', 'users.views.complete_perfil'),
     url(r'^user/perfil/edit/$', 'users.views.edit_perfil'),
+    url(r'^user/sent/code/$', 'users.views.sent_code_reset_pass'),
+    url(r'^recover/$', 'users.views.recover_pass'),
 
     #CATEGORIAS
     url(r'^category/$', 'productos.views.index'),
@@ -27,8 +29,6 @@ urlpatterns = patterns('',
 
     #TIPO
     url(r'^type/new/$', 'productos.views.new_tipo'),
-
-    url(r'^type/search/ajax/$', 'productos.views.buscar_tipo_ajax'),
 
     #PRODUCTOS
     url(r'^product/$', 'productos.views.index_productos'),

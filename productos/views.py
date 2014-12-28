@@ -73,18 +73,6 @@ def new_tipo(request):
     })
 
 
-def buscar_tipo_ajax(request):
-    if request.is_ajax():
-        nombre = request.GET['nombre'];
-        tipos = Tipo.objects.filter(categoria__nombre = nombre)
-        html = render_to_string('categorias/ajax/buscar_tipo_ajax.html',{
-            'tipos':tipos,
-        }, context_instance=RequestContext(request))
-        #html = "hola"
-        return JsonResponse(html, safe=False)
-    else:
-        raise Http404
-
 @login_required(login_url='/login')
 def index_productos(request):
     productos = Productos.objects.filter(usuario = request.user)

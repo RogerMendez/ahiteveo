@@ -1,0 +1,38 @@
+{% if categorias %}
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            {% for categoria in categorias %}
+                {% if categoria.tipo_set.select_related.count > 0 %}
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <li class="list-group-item bg-color-blueLight">
+                                <span class="badge align-right">{{ categoria.tipo_set.select_related.count }}</span>
+                                <a id="{{ categoria.id }}" href="#collapse{{ categoria.nombre }}" data-toggle="collapse" data-parent="#accordion" class="ajax" >
+                                    {{ categoria.nombre }}
+                                </a>
+                            </li>
+                        </h4>
+                    </div>
+                    <div id="collapse{{ categoria.nombre }}" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <ul class="nav nav-sidebar">
+                                {% for tipo in categoria.tipo_set.select_related.all %}
+                                    <li>
+                                        <a href="#">
+                                            <span class="glyphicon glyphicon-align-left"></span> {{ tipo.nombre }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <script>
+                $(document).ready(function(){
+                    $('.collapse').collapse();
+                });
+            </script>
+        </div>
+    </div>
+{% endif %}

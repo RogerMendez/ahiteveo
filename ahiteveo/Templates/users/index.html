@@ -28,7 +28,13 @@
             </p>
         </div>
         <div class="col-md-3">
-            <img src="/media/{{ perfil.avatar }}" alt="{{ user.first_name }}" class="img-responsive img-thumbnail"/>
+            {% if perfil.avatar %}
+                <img src="/media/{{ perfil.avatar }}" alt="{{ user.first_name }}" class="img-responsive img-thumbnail"/>
+            {% else %}
+                {% load staticfiles %}
+                <img src="{% static 'images/avatar.jpg' %}" alt="{{ user.first_name }}" class="img-responsive img-thumbnail"/>
+            {% endif %}
+
         </div>
         <div class="col-lg-3"></div>
     </div>

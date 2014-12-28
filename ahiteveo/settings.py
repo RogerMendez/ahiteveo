@@ -124,6 +124,7 @@ EMAIL_USE_TLS = True
 #AUTH_USER_MODEL = User
 AUTH_PROFILE_MODULE = 'users.Perfil'
 
+DIRECCION = "http://127.0.0.1:8000/"
 
 
 #import dj_database_url
