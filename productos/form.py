@@ -1,4 +1,4 @@
-from django.forms import ModelForm, Textarea, TextInput
+from django.forms import ModelForm, Textarea, TextInput, FileInput
 from django import forms
 from productos.models import Categorias, Productos, Tipo, Imagenes
 

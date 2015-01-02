@@ -90,8 +90,10 @@ def imagenes_producto_ajax(request):
         producto = get_object_or_404(Productos, pk = id)
         imagenes = Imagenes.objects.filter(producto = producto)
         html = render_to_string('productos/ajax/imagenes_ajax.html', {
+            'producto':producto,
             'imagenes':imagenes,
         }, context_instance=RequestContext(request))
+        print html
         return JsonResponse(html, safe=False)
     else:
         raise Http404
@@ -99,15 +101,33 @@ def imagenes_producto_ajax(request):
 @login_required(login_url='/login')
 def new_producto(request):
     if request.method == 'POST':
-        formulario = ProductoForm(request.POST)
+        formulario = ProductoForm(request.POST, request.FILES)
         if formulario.is_valid():
             p = formulario.save()
             p.usuario = request.user
             p.save()
+            sms = "Producto %s Creado Correctamente"% (p.nombre)
+            messages.success(request, sms)
             return HttpResponseRedirect(reverse(index_productos))
     else:
         formulario = ProductoForm()
     return render(request, 'productos/new_producto.html', {
+        'formulario':formulario,
+    })
+
+@login_required(login_url='login')
+def update_producto(request, id_producto):
+    producto = get_object_or_404(Productos, pk = id_producto)
+    if request.method == 'POST':
+        formulario = ProductoForm(request.POST, request.FILES, instance=producto)
+        if formulario.is_valid():
+            p = formulario.save()
+            sms = "Producto %s Modificado Correctamente"% (p.nombre)
+            messages.success(request, sms)
+            return HttpResponseRedirect(reverse(index_productos))
+    else:
+        formulario = ProductoForm(instance=producto)
+    return render(request, 'productos/update_producto.html', {
         'formulario':formulario,
     })
 

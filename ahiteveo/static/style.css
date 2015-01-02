@@ -293,3 +293,7 @@
 .carousel.vertical .item {
     left: 0;
 }
+.errorlist{
+  color: #a94442;
+  list-style: none;
+}

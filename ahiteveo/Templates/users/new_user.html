@@ -6,16 +6,19 @@ Nuevo Usuario
 Registrate!!!
 {% endblock %}
 {% block cuerpo_formulario %}
+    {% if formemail.errors or formuser.errors %}
+        <div class="alert alert-danger alert-dismissable">
+            Por Favor Corriga Los Siguientes errores
+        </div>
+    {% endif %}
     {% for field in formemail %}
-        {% if field.errors %}
-            <div class="alert alert-dismissable alert-danger">
-                {{ field.errors }}
-            </div>
-        {% endif %}
         <div class="form-group {% if field.errors %}has-error{% endif %}">
             {{ field.label_tag }}
             <div class="col-lg-9">
                 {{ field }}
+                {% if field.errors %}
+                    <p class="fg-color-red">{{ field.errors }}</p>
+                {% endif %}
             </div>
             {% if field.help_text %}
                 <p class="text-muted">{{ field.help_text }}</p>
@@ -23,15 +26,13 @@ Registrate!!!
         </div>
     {% endfor %}
     {% for field in formuser %}
-        {% if field.errors %}
-            <div class="alert alert-dismissable alert-danger">
-                {{ field.errors }}
-            </div>
-        {% endif %}
         <div class="form-group {% if field.errors %}has-error{% endif %}">
             {{ field.label_tag }}
             <div class="col-lg-9">
                 {{ field }}
+                {% if field.errors %}
+                    <p class="fg-color-red">{{ field.errors }}</p>
+                {% endif %}
             </div>
             {% if field.help_text %}
                 <p class="text-muted">{{ field.help_text }}</p>

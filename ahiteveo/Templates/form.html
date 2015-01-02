@@ -5,36 +5,41 @@ Formulario
 
 {% block cuerpo %}
 <form method="post" action="" class="form-horizontal">{% csrf_token %}
-  <fieldset>
-    <legend>{% block legend %}
-    Formulario
-    {% endblock %}</legend>
+    <fieldset>
+        <legend>{% block legend %}
+        Formulario
+        {% endblock %}</legend>
 
-    {% block cuerpo_formulario %}
-        {% for field in formulario %}
-            {% if field.errors %}
-                <div class="alert alert-dismissable alert-danger">
-                  {{ field.errors }}
+        {% block cuerpo_formulario %}
+            {% if formulario.errors %}
+                <div class="alert alert-danger alert-dismissable">
+                    Por Favor Corriga Los Siguientes errores
                 </div>
             {% endif %}
-            <div class="form-group {% if field.errors %}has-error{% endif %}">
-                {{ field.label_tag }}
-                <div class="col-lg-9">
-                    {{ field }}
+            {% for field in formulario %}
+                <div class="form-group {% if field.errors %}has-error{% endif %}">
+                    {{ field.label_tag }}
+                    <div class="col-lg-9">
+                        {{ field }}
+                        {% if field.errors %}
+                            <p class="fg-color-red">
+                                {{ field.errors }}
+                            </p>
+                        {% endif %}
+                    </div>
+                    {% if field.help_text %}
+                        <p class="help-block">{{ field.help_text }}</p>
+                    {% endif %}
                 </div>
-                {% if field.help_text %}
-                    <p class="help-block">{{ field.help_text }}</p>
-                {% endif %}
+            {% endfor %}
+        {% endblock %}
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <a href="{% block cancel %}/{% endblock %}" class="btn btn-danger">Cancelar</a>
+                <button type="submit" class="btn btn-primary">{% block submit %}Guardar{% endblock %}</button>
             </div>
-        {% endfor %}
-    {% endblock %}
-    <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-          <a href="{% block cancel %}/{% endblock %}" class="btn btn-danger">Cancelar</a>
-        <button type="submit" class="btn btn-primary">{% block submit %}Guardar{% endblock %}</button>
-      </div>
-    </div>
-  </fieldset>
+        </div>
+    </fieldset>
 </form>
     {% block information %}
 

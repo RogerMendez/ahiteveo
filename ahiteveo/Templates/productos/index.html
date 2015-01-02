@@ -8,44 +8,61 @@ Mis Productos
 {% block cuerpo %}
 <div class="row">
     <h2>Mis Productos</h2>
-    <div class="col-lg-7">
+    <div class="col-lg-12">
         {% for producto in productos %}
             <div class="panel {% cycle 'panel-primary' 'panel-success' 'panel-danger' 'panel-info' 'panel-warning' %}">
                 <div class="panel-heading">
-                    <h3 class="panel-title">{{ producto.nombre }}</h3>
+                    <h3 class="panel-title"><span><a href="{% url 'productos.views.update_producto' producto.id %}" class="fg-color-white"><i class="fa fa-pencil"></i> Editar</a></span> | {{ producto.nombre }}</h3>
                 </div>
                 <div class="panel-body">
-                    <p>
-                        {{ producto.descripcion }}
-                    </p>
-                    <p class="border-color-black"></p>
                     <div class="row">
-                        <div class="col-md-12">
-                            <form enctype="multipart/form-data" action="{% url 'productos.views.new_imagen' producto.id %}" method="post">{% csrf_token %}
-                                {{ formulario.as_p }}
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                                <a class="btn btn-info small images_ajax" id="{{ producto.id }}">Ver Imagenes</a>
-                            </form>
+                        <div class="col-md-3">
+                            <img class="img-responsive img-rounded" src="/media/{{ producto.portada }}" alt="{{ producto.nombre }}"/>
+                        </div>
+                        <div class="col-md-9">
+                            <p>
+                                {{ producto.descripcion|truncatewords:'5' }}
+                            </p>
+                            <p class="border-color-black"></p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form enctype="multipart/form-data" action="{% url 'productos.views.new_imagen' producto.id %}" method="post">{% csrf_token %}
+                                        {{ formulario.as_p }}
+                                        <button type="submit" class="btn btn-primary">Guardar</button>
+                                        <button id="{{ producto.id }}" type="button" class="btn btn-info images_ajax" data-toggle="modal" data-target="#myModal">
+                                            <i class="fa fa-image"></i> Ver Imagenes
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
              </div>
         {% endfor %}
     </div>
-    <div class="col-md-5" id="img">
-    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
 </div>
 <script>
 $(document).ready(function(){
-    $(".images_ajax").click(function(e){
-        e.preventDefault();
+    $(".images_ajax").click(function(){
         var id = $(this).attr('id');
         $.ajax({
+            beforeSend: function(){
+                var html = "<div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title' id='myModalLabel'>Cargando...</h4></div><div class='modal-body text-center'><i class='fa fa-spinner fa-spin fa-4x'></i></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'><i class='fa fa-close'></i></button></div></div></div>";
+                $("#myModal").html(html);
+
+            },
             data:{'id': id},
             url:"{% url 'productos.views.imagenes_producto_ajax' %}",
             type: "GET",
             success: function(data){
-                $("#img").html(data);
+                //var html = "<div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title' id='myModalLabel'>Cargandooooooooo...</h4></div><div class='modal-body text-center'><i class='fa fa-spinner fa-spin fa-4x'></i></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'><i class='fa fa-close'></i></button></div></div></div>";
+                //$("#myModal").html(data);
+                $(".modal-content").html(data);
             },
             failure: function(data){
                 console.log('error');

@@ -33,6 +33,7 @@ urlpatterns = patterns('',
     #PRODUCTOS
     url(r'^product/$', 'productos.views.index_productos'),
     url(r'^product/new/$', 'productos.views.new_producto'),
+    url(r'^product/(?P<id_producto>\d+)/update/$', 'productos.views.update_producto'),
 
     url(r'^product/(?P<producto_id>\d+)/imagen/new$', 'productos.views.new_imagen'),
     url(r'^product/imagen/$', 'productos.views.imagenes_producto_ajax'),
